@@ -1,0 +1,1027 @@
+<!DOCTYPE html>
+<html lang="bg">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grigor Dimitrov | Official Fan Site</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700;900&family=Playfair+Display:ital,wght@0,700;1,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        :root {
+            --primary: #003566;
+            --accent: #c5a059;
+            --text: #2d3436;
+            --bg-light: #f8f9fa;
+            --white: #ffffff;
+            --transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-light);
+            color: var(--text);
+            overflow-x: hidden;
+            line-height: 1.6;
+        }
+
+        /* --- Custom Scrollbar --- */
+        ::-webkit-scrollbar { width: 10px; }
+        ::-webkit-scrollbar-track { background: #f1f1f1; }
+        ::-webkit-scrollbar-thumb { background: var(--primary); border-radius: 5px; }
+
+        /* --- Header & Nav --- */
+        header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 2px 20px rgba(0,0,0,0.05);
+            padding: 1rem 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.8rem;
+            font-weight: 900;
+            color: var(--primary);
+            text-decoration: none;
+            letter-spacing: -1px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text);
+            font-weight: 600;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            transition: var(--transition);
+        }
+
+        .nav-links a:hover { color: var(--accent); }
+
+        .lang-switcher {
+            display: flex;
+            gap: 5px;
+            flex-wrap: wrap;
+            justify-content: flex-end;
+            max-width: 250px;
+        }
+
+        .lang-btn {
+            padding: 4px 8px;
+            border: 1px solid #ddd;
+            background: white;
+            cursor: pointer;
+            font-size: 0.65rem;
+            font-weight: bold;
+            border-radius: 4px;
+            transition: var(--transition);
+        }
+
+        .lang-btn.active {
+            background: var(--primary);
+            color: white;
+            border-color: var(--primary);
+        }
+
+        /* --- Hero Section --- */
+        .hero {
+            height: 100vh;
+            background: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.4)), 
+                        url('https://images.tennis.com/image/private/t_q-best/v1710033634/tenniscom-prd/vz1ythi3bp1xgotx49ub.jpg');
+            background-size: cover;
+            background-position: center 20%;
+            background-attachment: fixed;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+        }
+
+        .hero-content {
+            max-width: 900px;
+            animation: fadeInUp 1.5s ease;
+        }
+
+        .hero h1 {
+            font-size: 5.5rem;
+            font-family: 'Playfair Display', serif;
+            margin-bottom: 1.5rem;
+            text-shadow: 2px 4px 10px rgba(0,0,0,0.5);
+            font-weight: 900;
+        }
+
+        .hero p {
+            font-size: 1.4rem;
+            letter-spacing: 5px;
+            text-transform: uppercase;
+            margin-bottom: 2rem;
+            text-shadow: 1px 2px 5px rgba(0,0,0,0.5);
+            font-weight: 300;
+        }
+
+        /* --- Sections General --- */
+        section { padding: 80px 10%; }
+
+        .section-title { text-align: center; margin-bottom: 40px; }
+
+        .section-title h2 {
+            font-size: 2.5rem;
+            font-family: 'Playfair Display', serif;
+            color: var(--primary);
+            position: relative;
+            display: inline-block;
+        }
+
+        .section-title h2::after {
+            content: '';
+            position: absolute;
+            width: 60%;
+            height: 3px;
+            background: var(--accent);
+            bottom: -15px;
+            left: 20%;
+        }
+
+        /* --- News Section (Compact Updates) --- */
+        .news-grid {
+            display: grid;
+            grid-template-columns: 1fr; /* Single column for list style */
+            gap: 25px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .news-card {
+            background: var(--white);
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+            transition: var(--transition);
+            display: flex; /* Makes it horizontal */
+            height: 220px;
+        }
+
+        .news-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+        }
+
+        .news-img { 
+            width: 35%; /* Fixed width for image */
+            height: 100%; 
+            object-fit: cover; 
+        }
+
+        .news-body { 
+            padding: 25px; 
+            width: 65%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .news-body h3 { 
+            margin-bottom: 10px; 
+            color: var(--primary); 
+            font-size: 1.15rem;
+            line-height: 1.3;
+        }
+
+        .news-body p {
+            font-size: 0.9rem;
+            color: #666;
+            display: -webkit-box;
+            -webkit-line-clamp: 2; /* Less text visible for compactness */
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+            margin-bottom: 15px;
+        }
+
+        .read-more-btn {
+            align-self: flex-start;
+            padding: 10px 25px;
+            background: var(--primary);
+            color: white;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            font-weight: 700;
+            text-transform: uppercase;
+            font-size: 0.75rem;
+            transition: var(--transition);
+        }
+
+        /* --- Stats --- */
+        .stats-container {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            gap: 30px;
+            background: white;
+            padding: 40px;
+            border-radius: 30px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.03);
+        }
+
+        .stat-item { text-align: center; }
+        .stat-number { font-size: 3rem; font-weight: 900; color: var(--accent); display: block; }
+        .stat-label { text-transform: uppercase; font-weight: 700; color: var(--primary); font-size: 0.75rem; }
+
+        /* --- Tournaments Table --- */
+        .tournament-wrapper { overflow-x: auto; border-radius: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.05); }
+        .tournament-list { width: 100%; border-collapse: collapse; background: white; }
+        .tournament-list th, .tournament-list td { padding: 20px; text-align: left; border-bottom: 1px solid #f0f0f0; }
+        .tournament-list th { background: var(--primary); color: white; text-transform: uppercase; font-size: 0.8rem; }
+
+        /* --- Facts --- */
+        .facts-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; }
+        .fact-box {
+            background: white;
+            padding: 40px;
+            border-radius: 20px;
+            text-align: center;
+            transition: var(--transition);
+            border-bottom: 5px solid var(--accent);
+        }
+        .fact-box:hover { transform: translateY(-10px); background: var(--primary); color: white; }
+        .fact-box i { font-size: 2.5rem; color: var(--accent); margin-bottom: 20px; }
+
+        /* --- Sponsors --- */
+        .sponsors { background: #fff; padding: 60px 0; text-align: center; }
+        .sponsor-logos {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 50px;
+            flex-wrap: wrap;
+            filter: grayscale(1);
+            opacity: 0.5;
+        }
+        .sponsor-logos img { height: 35px; transition: var(--transition); }
+
+        /* --- Modal --- */
+        .modal {
+            position: fixed;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            background: rgba(0, 53, 102, 0.9);
+            display: none;
+            justify-content: center;
+            align-items: center;
+            z-index: 2000;
+            padding: 20px;
+        }
+        .modal-content {
+            background: white;
+            max-width: 850px;
+            width: 100%;
+            max-height: 85vh;
+            border-radius: 25px;
+            position: relative;
+            padding: 50px;
+            overflow-y: auto;
+        }
+        .close-modal { position: absolute; top: 25px; right: 25px; font-size: 2.5rem; cursor: pointer; color: var(--primary); }
+        #modalImg {
+    width: 100%;
+    max-height: 400px; /* Prevents the image from being too long */
+    object-fit: cover;  /* Keeps the image aspect ratio looking good */
+    border-radius: 20px;
+    margin-bottom: 30px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2.8rem; }
+            .news-card { flex-direction: column; height: auto; }
+            .news-img { width: 100%; height: 200px; }
+            .news-body { width: 100%; }
+            .nav-links { display: none; }
+            section { padding: 60px 5%; }
+        }
+
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(50px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <a href="#" class="logo">GD</a>
+        <nav>
+            <ul class="nav-links">
+                <li><a href="#news" data-key="nav_news">Новини</a></li>
+                <li><a href="#ranking" data-key="nav_ranking">Ранглиста</a></li>
+                <li><a href="#tournaments" data-key="nav_tournaments">Турнири</a></li>
+                <li><a href="#facts" data-key="nav_facts">Факти</a></li>
+            </ul>
+        </nav>
+        <div class="lang-switcher">
+            <button class="lang-btn active" onclick="setLanguage('bg')">BG</button>
+            <button class="lang-btn" onclick="setLanguage('en')">EN</button>
+            <button class="lang-btn" onclick="setLanguage('es')">ES</button>
+            <button class="lang-btn" onclick="setLanguage('fr')">FR</button>
+            <button class="lang-btn" onclick="setLanguage('it')">IT</button>
+            <button class="lang-btn" onclick="setLanguage('pt')">PT</button>
+            <button class="lang-btn" onclick="setLanguage('de')">DE</button>
+            <button class="lang-btn" onclick="setLanguage('ru')">RU</button>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="hero-content">
+            <p data-key="hero_sub">Официален фен сайт</p>
+            <h1 data-key="hero_title">Григор Димитров</h1>
+            <a href="#news" class="read-more-btn" style="background: var(--accent); padding: 15px 35px;" data-key="hero_btn">Разгледай новините</a>
+        </div>
+    </section>
+
+    <section id="ranking">
+        <div class="section-title">
+            <h2 data-key="nav_ranking">Световна Ранглиста</h2>
+        </div>
+        <div class="stats-container">
+            <div class="stat-item">
+                <span class="stat-number">42</span>
+                <span class="stat-label" data-key="stat_rank">Текущо място</span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-number">3</span>
+                <span class="stat-label" data-key="stat_best">Най-високо място</span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-number">9</span>
+                <span class="stat-label" data-key="stat_titles">ATP Титли</span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-number">2026</span>
+                <span class="stat-label" data-key="stat_year">Сезон</span>
+            </div>
+        </div>
+    </section>
+
+    <section id="news" style="background: #f0f4f8;">
+        <div class="section-title">
+            <h2 data-key="nav_news">Последни Новини</h2>
+        </div>
+        <div class="news-grid" id="newsContainer">
+            </div>
+    </section>
+
+    <section id="tournaments">
+        <div class="section-title">
+            <h2 data-key="nav_tournaments">Следващи Турнири</h2>
+        </div>
+        <div class="tournament-wrapper">
+            <table class="tournament-list">
+                <thead>
+                    <tr>
+                        <th data-key="th_date">Дата</th>
+                        <th data-key="th_event">Турнир</th>
+                        <th data-key="th_surface">Настилка</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>04 - 15 Март 2026</td>
+                        <td>Indian Wells Masters (ATP 1000)</td>
+                        <td data-key="surf_hard">Hard</td>
+                    </tr>
+                    <tr>
+                        <td>15 Март - 29 Март 2026</td>
+                        <td>Miami Open (ATP 1000)</td>
+                        <td data-key="surf_hard">Hard</td>
+                    </tr>
+                    <tr>
+                        <td>5 - 12 Април 2026</td>
+                        <td>Monte-Carlo Masters</td>
+                        <td data-key="surf_clay">Clay</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+   <section id="facts" style="background: #f0f4f8;">
+        <div class="section-title">
+            <h2 data-key="nav_facts">Интересни Факти</h2>
+        </div>
+        <div class="facts-grid">
+            <div class="fact-box">
+                <i class="fas fa-trophy"></i>
+                <h4 style="margin-bottom:10px;">ATP Finals</h4>
+                <p data-key="fact_1">Шампион на ATP Finals 2017 без нито една загуба в турнира.</p>
+            </div>
+            <div class="fact-box">
+                <i class="fas fa-magic"></i>
+                <h4 style="margin-bottom:10px;">Стил</h4>
+                <p data-key="fact_2">Известен с един от най-елегантните бекхенди с една ръка в тура.</p>
+            </div>
+            <div class="fact-box">
+                <i class="fas fa-globe-europe"></i>
+                <h4 style="margin-bottom:10px;">Посланик</h4>
+                <p data-key="fact_3">Горд посланик на България и активен филантроп по целия свят.</p>
+            </div>
+            <div class="fact-box">
+    <i class="fas fa-chart-line"></i>
+    <h4 style="margin-bottom:10px;">Рекорди</h4>
+    <p data-key="fact_4">Първият българин, достигнал до №3 в световната ранглиста на ATP.</p>
+</div>
+
+<div class="fact-box">
+    <i class="fas fa-heart"></i>
+    <h4 style="margin-bottom:10px;">Филантропия</h4>
+    <p data-key="fact_5">Основател на фондация, подкрепяща млади таланти и социални каузи в България.</p>
+</div>
+
+<div class="fact-box">
+    <i class="fas fa-flag"></i>
+    <h4 style="margin-bottom:10px;">Исторически Успех</h4>
+    <p data-key="fact_6">Първият българин, достигнал до полуфиналите на турнир от Големия шлем.</p>
+</div>
+
+<div class="fact-box">
+    <i class="fas fa-star"></i>
+    <h4 style="margin-bottom:10px;">Признание</h4>
+    <p data-key="fact_7">Носител на наградата „Спортист на годината“ в България.</p>
+</div>
+
+<div class="fact-box">
+    <i class="fas fa-running"></i>
+    <h4 style="margin-bottom:10px;">Атлетизъм</h4>
+    <p data-key="fact_8">Смятан за един от най-бързите и атлетични играчи на корта.</p>
+</div>
+
+        </div>
+    </section>
+
+    <div class="sponsors">
+        <p style="margin-bottom: 30px; font-weight: 800; color: #bbb; letter-spacing: 2px;" data-key="partners">ГРИГОР ДИМИТРОВ</p>
+        <div class="sponsor-logos">
+             <img src="https://1000logos.net/wp-content/uploads/2021/05/Lacoste-logo.png" alt="Lacoste">
+            <img src="https://image.similarpng.com/file/similarpng/very-thumbnail/2020/09/Wilson-Logo-design-Premium-vector-PNG.png" alt="Wilson">
+            <img src="https://cdn.prod.website-files.com/5df0e30148d13f56ce0344ea/662b6e50d55c92d1938258ed_Mas-Bianchet%20lightbg%20box%20transparency%20(1).png" alt="Bianchet">
+            <img src="https://bulgaria.endeavor.org/wp-content/uploads/2024/02/LOGO-Payhawk-600x400.png" alt="Payhawk">
+            <img src="https://www.wto.com/app/dist/images/logo.png" alt="World Transport Overseas">
+        </div>
+    </div>
+
+    <div class="modal" id="newsModal">
+        <div class="modal-content">
+            <span class="close-modal" onclick="closeModal()">&times;</span>
+            <img id="modalImg" src="" alt="" style="width:100%; border-radius:20px; margin-bottom:30px; box-shadow: 0 10px 30px rgba(0,0,0,0.1);">
+            <h2 id="modalTitle" style="color:var(--primary); margin-bottom:25px; font-family:'Playfair Display', serif; font-size: 2rem;"></h2>
+            <div id="modalText" style="color:#444; line-height:1.9; font-size: 1.1rem; text-align: justify;"></div>
+        </div>
+    </div>
+
+    <script>
+        const newsData = [
+      {
+  "id": 9004,
+  "title": {
+    "bg": "Тежък жребий за Григор Димитров на Индиън Уелс – българинът може да срещне Алкарас още в първия си мач",
+    "en": "Tough Indian Wells draw for Grigor Dimitrov – the Bulgarian could face Alcaraz in his opening match",
+    "es": "Sorteo complicado para Grigor Dimitrov en Indian Wells: el búlgaro podría enfrentarse a Alcaraz en su debut",
+    "fr": "Tirage difficile pour Grigor Dimitrov à Indian Wells – le Bulgare pourrait affronter Alcaraz dès son premier match",
+    "it": "Sorteggio difficile per Grigor Dimitrov a Indian Wells: il bulgaro potrebbe affrontare Alcaraz all’esordio",
+    "pt": "Sorteio difícil para Grigor Dimitrov em Indian Wells: o búlgaro pode enfrentar Alcaraz logo na estreia",
+    "de": "Schweres Los für Grigor Dimitrov in Indian Wells – der Bulgare könnte gleich zum Auftakt auf Alcaraz treffen",
+    "ru": "Тяжёлый жребий для Григора Димитрова на Индиан‑Уэллс: болгарин может сыграть с Алкарасом уже в первом матче"
+  },
+  "text": {
+    "bg": "Григор Димитров получи изключително тежък жребий за Мастърс турнира в Индиън Уелс 2026, след като стана ясно, че още в първия си мач може да се изправи срещу световния №1 Карлос Алкарас. Испанецът започва участието си срещу победителя от двубоя между Димитров и левичаря Терънс Атман, което поставя българина в една от най-предизвикателните позиции в целия турнир. Алкарас вече е петкратен шампион в пустинята и се намира в отлична форма, което прави потенциалния сблъсък още по-напрегнат. Димитров има богата история в Индиън Уелс – полуфинал през 2021 и четвъртфинал през 2022 – но този път пътят му към втора седмица изглежда по-труден от всякога. Схемата в неговата половина е изпълнена с големи имена, включително Новак Джокович, който също се намира в същата част на таблицата. Това означава, че при евентуален успех над Алкарас, Димитров може да се изправи срещу още един от най-трудните съперници в тура. Турнирът в Индиън Уелс, често наричан „петия Шлем“, традиционно предлага тежки битки още от ранните кръгове, но този жребий поставя българина в ситуация, която изисква максимална концентрация, физическа издръжливост и тактическа прецизност. Въпреки трудностите, Димитров е доказвал многократно, че може да се изправя срещу най-добрите и да играе на най-високо ниво, а феновете му очакват с интерес дали отново ще успее да блесне в Калифорнийската пустиня.",
+    "en": "Grigor Dimitrov has been handed an exceptionally difficult draw at the 2026 Indian Wells Masters, as he could face World No. 1 Carlos Alcaraz in his very first match. Alcaraz is set to open his campaign against the winner of the clash between Dimitrov and rising left-hander Terence Atmane, placing the Bulgarian in one of the toughest positions in the entire field. The Spaniard arrives in California as a five-time champion and in outstanding form, making the potential encounter even more challenging. Dimitrov has a strong history at Indian Wells, having reached the semifinals in 2021 and the quarterfinals in 2022, but this year’s path appears more demanding than ever. His half of the draw is loaded with top contenders, including Novak Djokovic, who also occupies the same section. This means that even if Dimitrov manages to overcome Alcaraz, another monumental challenge could await him in the following rounds. Indian Wells, often referred to as the “fifth Slam,” is known for producing high-intensity battles from the early stages, and this draw places Dimitrov in a scenario requiring peak focus, physical resilience and tactical sharpness. Despite the difficulty, the Bulgarian has repeatedly shown his ability to rise to big occasions and compete with the very best, leaving fans eager to see whether he can once again shine in the California desert.",
+    "es": "Grigor Dimitrov afronta un sorteo extremadamente complicado en el Masters de Indian Wells 2026, ya que podría enfrentarse al número uno del mundo, Carlos Alcaraz, en su primer partido. El español debutará contra el ganador del duelo entre Dimitrov y el zurdo Terence Atmane, situando al búlgaro en una de las posiciones más exigentes de todo el cuadro. Alcaraz llega a California como cinco veces campeón y en un estado de forma excepcional, lo que convierte el posible enfrentamiento en un reto aún mayor. Dimitrov cuenta con un historial destacado en Indian Wells, con semifinales en 2021 y cuartos de final en 2022, pero este año su camino parece más difícil que nunca. Su mitad del cuadro está repleta de grandes figuras, incluido Novak Djokovic, que también se encuentra en esa sección. Esto significa que, incluso si Dimitrov supera a Alcaraz, podría enfrentarse a otro desafío monumental en las rondas posteriores. Indian Wells, conocido como el “quinto Grand Slam”, suele ofrecer duelos intensos desde las primeras fases, y este sorteo coloca al búlgaro en una situación que exige máxima concentración, resistencia física y precisión táctica. A pesar de las dificultades, Dimitrov ha demostrado en numerosas ocasiones que puede competir al más alto nivel, y sus seguidores esperan con ilusión ver si vuelve a brillar en el desierto californiano.",
+    "fr": "Grigor Dimitrov a hérité d’un tirage exceptionnellement difficile au Masters d’Indian Wells 2026, puisqu’il pourrait affronter le numéro un mondial Carlos Alcaraz dès son premier match. L’Espagnol débutera son tournoi contre le vainqueur du duel entre Dimitrov et le gaucher montant Terence Atmane, plaçant ainsi le Bulgare dans l’une des positions les plus délicates du tableau. Alcaraz arrive en Californie en tant que quintuple champion et dans une forme remarquable, rendant une éventuelle confrontation encore plus redoutable. Dimitrov possède un solide historique à Indian Wells, avec une demi-finale en 2021 et un quart de finale en 2022, mais cette année son parcours semble plus ardu que jamais. Sa moitié de tableau regorge de grands noms, dont Novak Djokovic, également présent dans cette section. Cela signifie que même en cas de victoire contre Alcaraz, un nouveau défi colossal pourrait l’attendre dans les tours suivants. Indian Wells, souvent surnommé le « cinquième Grand Chelem », est réputé pour ses matchs intenses dès les premiers tours, et ce tirage place le Bulgare dans une situation nécessitant une concentration maximale, une grande endurance physique et une précision tactique. Malgré les difficultés, Dimitrov a prouvé à maintes reprises qu’il pouvait rivaliser avec les meilleurs, et ses fans attendent avec impatience de voir s’il brillera à nouveau dans le désert californien.",
+    "it": "Grigor Dimitrov ha ricevuto un sorteggio estremamente impegnativo al Masters di Indian Wells 2026, poiché potrebbe affrontare il numero uno del mondo Carlos Alcaraz già al suo primo incontro. Lo spagnolo inizierà il torneo contro il vincitore della sfida tra Dimitrov e il mancino emergente Terence Atmane, collocando il bulgaro in una delle posizioni più difficili dell’intero tabellone. Alcaraz arriva in California da cinque volte campione e in una forma straordinaria, rendendo l’eventuale confronto ancora più complicato. Dimitrov vanta ottimi risultati a Indian Wells, con una semifinale nel 2021 e un quarto di finale nel 2022, ma quest’anno il suo percorso appare più arduo che mai. La sua metà del tabellone è ricca di grandi nomi, incluso Novak Djokovic, anch’egli presente nella stessa sezione. Ciò significa che, anche in caso di vittoria su Alcaraz, Dimitrov potrebbe trovarsi di fronte un’altra sfida enorme nei turni successivi. Indian Wells, spesso definito il “quinto Slam”, è noto per incontri intensi sin dalle prime fasi, e questo sorteggio pone il bulgaro in una situazione che richiede massima concentrazione, resistenza fisica e precisione tattica. Nonostante le difficoltà, Dimitrov ha più volte dimostrato di saper competere contro i migliori, e i suoi tifosi attendono con entusiasmo di vedere se riuscirà ancora una volta a brillare nel deserto californiano.",
+    "pt": "Grigor Dimitrov recebeu um sorteio extremamente difícil no Masters de Indian Wells 2026, podendo enfrentar o número um do mundo, Carlos Alcaraz, logo na sua estreia. O espanhol iniciará a campanha contra o vencedor do duelo entre Dimitrov e o canhoto em ascensão Terence Atmane, colocando o búlgaro numa das posições mais complicadas de todo o torneio. Alcaraz chega à Califórnia como cinco vezes campeão e em excelente forma, tornando o possível confronto ainda mais desafiador. Dimitrov tem um histórico sólido em Indian Wells, com semifinal em 2021 e quartas de final em 2022, mas este ano o seu caminho parece mais exigente do que nunca. A sua metade do quadro está repleta de grandes nomes, incluindo Novak Djokovic, que também se encontra na mesma secção. Isso significa que, mesmo que Dimitrov consiga superar Alcaraz, outro enorme desafio poderá surgir nas fases seguintes. Indian Wells, frequentemente chamado de “quinto Grand Slam”, é conhecido por partidas intensas desde as primeiras rondas, e este sorteio coloca o búlgaro numa situação que exige concentração máxima, resistência física e precisão tática. Apesar das dificuldades, Dimitrov já provou inúmeras vezes que pode competir ao mais alto nível, e os seus fãs aguardam com expectativa para ver se ele voltará a brilhar no deserto californiano.",
+    "de": "Grigor Dimitrov hat beim Indian Wells Masters 2026 ein äußerst schwieriges Los erwischt, da er bereits in seinem ersten Match auf die Nummer eins der Welt, Carlos Alcaraz, treffen könnte. Der Spanier beginnt das Turnier gegen den Sieger der Partie zwischen Dimitrov und dem aufstrebenden Linkshänder Terence Atmane, was den Bulgaren in eine der anspruchsvollsten Positionen des gesamten Feldes bringt. Alcaraz reist als fünffacher Champion und in hervorragender Form an, was ein mögliches Duell noch herausfordernder macht. Dimitrov hat in Indian Wells bereits starke Ergebnisse erzielt, darunter ein Halbfinale 2021 und ein Viertelfinale 2022, doch in diesem Jahr scheint sein Weg schwieriger denn je. Seine Hälfte der Auslosung ist gespickt mit Topspielern, darunter auch Novak Djokovic, der sich ebenfalls in diesem Abschnitt befindet. Das bedeutet, dass Dimitrov selbst bei einem Sieg über Alcaraz in den folgenden Runden vor einer weiteren gewaltigen Aufgabe stehen könnte. Indian Wells, oft als „fünfter Grand Slam“ bezeichnet, ist bekannt für hochintensive Matches bereits in den frühen Runden, und dieses Los verlangt vom Bulgaren höchste Konzentration, körperliche Belastbarkeit und taktische Präzision. Trotz der Schwere des Weges hat Dimitrov immer wieder bewiesen, dass er mit den Besten mithalten kann, und seine Fans hoffen, dass er erneut im kalifornischen Wüstensonnenschein auftrumpfen wird.",
+    "ru": "Григор Димитров получил крайне тяжёлый жребий на турнире Indian Wells 2026, поскольку уже в своём первом матче может встретиться с первой ракеткой мира Карлосом Алкарасом. Испанец начнёт турнир против победителя встречи между Димитровым и левшой Терренсом Атманом, что ставит болгарина в одну из самых сложных позиций во всей сетке. Алкарас прибывает в Калифорнию в статусе пятикратного чемпиона и в великолепной форме, что делает потенциальный матч ещё более напряжённым. Димитров имеет богатую историю выступлений в Индиан‑Уэллс, включая полуфинал 2021 года и четвертьфинал 2022 года, однако в этом сезоне его путь выглядит труднее, чем когда‑либо. Его половина сетки насыщена сильнейшими игроками, включая Новака Джоковича, который также находится в этом разделе. Это означает, что даже в случае победы над Алкарасом Димитров может столкнуться с новым серьёзным испытанием в следующих раундах. Турнир Indian Wells, часто называемый «пятым Шлемом», известен напряжёнными матчами уже на ранних стадиях, и этот жребий требует от болгарина максимальной концентрации, физической выносливости и тактической точности. Несмотря на трудности, Димитров неоднократно доказывал, что способен бороться с лучшими, и его поклонники с интересом ждут, сможет ли он вновь засиять в калифорнийской пустыне."
+  },
+  "img": "https://www.grigor-dimitrov.com/storage/pics/photos/brisbaneinternational-1767248269111.jpg"
+},
+{
+  "id": 9005,
+  "title": {
+    "bg": "Акапулко – Григор Димитров и Коболи се отказаха от турнира по двойки и пропуснаха четвъртфинала срещу Жордар и Мендес",
+    "en": "Acapulco – Grigor Dimitrov and Cobolli withdraw from doubles event, missing quarterfinal clash with Jourdar and Mendez",
+    "es": "Acapulco – Grigor Dimitrov y Cobolli se retiran del dobles y no disputan los cuartos de final ante Jourdar y Méndez",
+    "fr": "Acapulco – Grigor Dimitrov et Cobolli se retirent du double et manquent le quart de finale contre Jourdar et Mendez",
+    "it": "Acapulco – Grigor Dimitrov e Cobolli si ritirano dal doppio e saltano i quarti contro Jourdar e Mendez",
+    "pt": "Acapulco – Grigor Dimitrov e Cobolli desistem do torneio de duplas e não disputam os quartos de final contra Jourdar e Mendez",
+    "de": "Acapulco – Grigor Dimitrov und Cobolli ziehen sich aus dem Doppelturnier zurück und verpassen das Viertelfinale gegen Jourdar und Mendez",
+    "ru": "Акапулько – Григор Димитров и Коболли снялись с парного разряда и пропустили четвертьфинал против Жордара и Мендеса"
+  },
+  "text": {
+    "bg": "Григор Димитров и Флавио Коболи взеха неочаквано решение да се откажат от участието си в турнира по двойки в Акапулко, което доведе до автоматично класиране на техните съперници Рафаел Жордар и Родриго Пачеко Мендес за следващия етап. Българо‑италианският тандем трябваше да излезе в четвъртфинален двубой, който бе сред най‑очакваните мачове от програмата, но часове преди срещата бе потвърдено, че Димитров и Коболи няма да могат да участват. Решението предизвика широк интерес, тъй като двамата показаха стабилна игра в предишния кръг и изглеждаха готови да се борят за място на полуфиналите. Причините за отказването не бяха официално оповестени, но според близки до отбора източници става дума за предпазна мярка, свързана с натоварения график и необходимостта Димитров да се концентрира върху участието си на сингъл. Фактът, че двамата се отказаха точно преди ключов мач, подчертава колко внимателно се управлява подготовката на българина в този етап от сезона. За Жордар и Мендес това развитие означаваше директен път към следващия кръг, без да се налага да излизат на корта. Мексиканската публика прие новината с разочарование, тъй като очакваше зрелищен двубой, но въпреки това уважи решението на Димитров и Коболи. Отказването добавя нов пласт към динамиката на турнира и оставя въпроса какво би се случило, ако двамата бяха излезли на корта.",
+    "en": "Grigor Dimitrov and Flavio Cobolli made the unexpected decision to withdraw from the doubles competition in Acapulco, resulting in their scheduled opponents, Rafael Jourdar and Rodrigo Pacheco Mendez, advancing directly to the next round. The Bulgarian‑Italian duo had been set to contest one of the most anticipated quarterfinal matches of the tournament, but only hours before the encounter it was confirmed that they would not be able to take part. The withdrawal drew considerable attention, as Dimitrov and Cobolli had shown promising form in their previous match and appeared ready to challenge for a place in the semifinals. While no official explanation was released, sources close to the team indicated that the decision was precautionary, linked to the demanding schedule and Dimitrov’s need to prioritize his singles campaign. The timing of the withdrawal, coming just before a key match, highlights the strategic approach behind managing Dimitrov’s workload at this stage of the season. For Jourdar and Mendez, the development meant a straightforward passage to the next round without stepping on court. The Mexican crowd reacted with disappointment, having anticipated a competitive and entertaining match, yet respected the duo’s decision. The withdrawal adds a new layer to the tournament narrative and leaves open the question of how the match might have unfolded had Dimitrov and Cobolli competed.",
+    "es": "Grigor Dimitrov y Flavio Cobolli tomaron la inesperada decisión de retirarse del torneo de dobles en Acapulco, lo que permitió que sus rivales programados, Rafael Jourdar y Rodrigo Pacheco Méndez, avanzaran directamente a la siguiente ronda. La pareja búlgaro‑italiana debía disputar uno de los duelos de cuartos de final más esperados del certamen, pero pocas horas antes del encuentro se confirmó que no podrían participar. La noticia generó gran interés, ya que Dimitrov y Cobolli habían mostrado un nivel sólido en la ronda anterior y parecían preparados para luchar por un lugar en las semifinales. Aunque no se ofreció una explicación oficial, fuentes cercanas al equipo señalaron que la decisión respondía a una medida preventiva relacionada con el exigente calendario y la necesidad de que Dimitrov priorizara su participación en individuales. La retirada, producida justo antes de un partido clave, subraya la estrategia detrás de la gestión de la carga física del búlgaro en esta etapa de la temporada. Para Jourdar y Méndez, la situación significó un pase directo sin necesidad de saltar a la pista. El público mexicano recibió la noticia con decepción, pues esperaba un duelo atractivo, aunque respetó la decisión de la pareja. La retirada añade un nuevo matiz a la historia del torneo y deja abierta la incógnita de cómo habría sido el partido si Dimitrov y Cobolli hubieran jugado.",
+    "fr": "Grigor Dimitrov et Flavio Cobolli ont pris la décision inattendue de se retirer du tournoi de double à Acapulco, permettant ainsi à leurs adversaires prévus, Rafael Jourdar et Rodrigo Pacheco Mendez, d’accéder directement au tour suivant. Le duo bulgaro‑italien devait disputer l’un des quarts de finale les plus attendus du tournoi, mais quelques heures avant la rencontre, il a été confirmé qu’ils ne pourraient pas participer. Ce retrait a suscité beaucoup d’attention, car Dimitrov et Cobolli avaient montré une performance solide au tour précédent et semblaient prêts à se battre pour une place en demi‑finale. Bien qu’aucune explication officielle n’ait été donnée, des sources proches de l’équipe ont indiqué qu’il s’agissait d’une mesure de précaution liée au calendrier chargé et à la nécessité pour Dimitrov de se concentrer sur le simple. Le timing du retrait, juste avant un match important, souligne la gestion stratégique de la charge de travail du Bulgare à ce stade de la saison. Pour Jourdar et Mendez, cela signifiait une qualification directe sans entrer sur le court. Le public mexicain a accueilli la nouvelle avec déception, espérant un match spectaculaire, mais a respecté la décision des joueurs. Ce retrait ajoute une nouvelle dimension au récit du tournoi et laisse ouverte la question de ce qu’aurait pu être le match si Dimitrov et Cobolli avaient joué.",
+    "it": "Grigor Dimitrov e Flavio Cobolli hanno preso la decisione inaspettata di ritirarsi dal torneo di doppio di Acapulco, consentendo così ai loro avversari designati, Rafael Jourdar e Rodrigo Pacheco Mendez, di accedere direttamente al turno successivo. La coppia bulgaro‑italiana era attesa in uno dei quarti di finale più interessanti della giornata, ma poche ore prima dell’incontro è arrivata la conferma del forfait. La notizia ha attirato molta attenzione, poiché Dimitrov e Cobolli avevano mostrato un’ottima intesa nel turno precedente e sembravano pronti a lottare per un posto in semifinale. Sebbene non sia stata fornita una motivazione ufficiale, fonti vicine al team hanno parlato di una scelta precauzionale legata al calendario fitto e alla necessità per Dimitrov di concentrarsi sul singolare. Il ritiro, arrivato alla vigilia di un match importante, evidenzia la gestione strategica del carico di lavoro del bulgaro in questa fase della stagione. Per Jourdar e Mendez la situazione ha significato un passaggio diretto senza scendere in campo. Il pubblico messicano ha accolto la notizia con delusione, aspettandosi una sfida spettacolare, ma ha comunque rispettato la decisione dei due giocatori. Il ritiro aggiunge un nuovo elemento alla narrativa del torneo e lascia aperta la domanda su come si sarebbe sviluppato il match se Dimitrov e Cobolli fossero scesi in campo.",
+    "pt": "Grigor Dimitrov e Flavio Cobolli tomaram a decisão inesperada de desistir do torneio de duplas em Acapulco, o que permitiu que seus adversários programados, Rafael Jourdar e Rodrigo Pacheco Mendez, avançassem diretamente para a fase seguinte. A dupla búlgaro‑italiana estava escalada para disputar um dos confrontos mais aguardados dos quartos de final, mas poucas horas antes do jogo foi confirmado que não poderiam participar. A desistência chamou bastante atenção, já que Dimitrov e Cobolli haviam mostrado um desempenho sólido na rodada anterior e pareciam preparados para lutar por uma vaga nas semifinais. Embora nenhuma explicação oficial tenha sido divulgada, fontes próximas à equipa indicaram que a decisão foi tomada por precaução, devido ao calendário exigente e à necessidade de Dimitrov priorizar a competição de simples. O facto de o abandono ter ocorrido antes de um duelo importante evidencia a estratégia na gestão do esforço físico do búlgaro nesta fase da temporada. Para Jourdar e Mendez, a situação representou uma passagem direta sem entrar em quadra. O público mexicano recebeu a notícia com frustração, pois esperava um jogo equilibrado e emocionante, mas respeitou a decisão dos atletas. A desistência acrescenta um novo capítulo à narrativa do torneio e deixa em aberto como teria sido o confronto caso Dimitrov e Cobolli tivessem jogado.",
+    "de": "Grigor Dimitrov und Flavio Cobolli trafen die überraschende Entscheidung, sich aus dem Doppelbewerb in Acapulco zurückzuziehen, wodurch ihre vorgesehenen Gegner Rafael Jourdar und Rodrigo Pacheco Mendez kampflos in die nächste Runde einzogen. Das bulgarisch‑italienische Duo hätte eines der spannendsten Viertelfinalduelle bestreiten sollen, doch nur wenige Stunden vor dem Match wurde bestätigt, dass sie nicht antreten können. Der Rückzug sorgte für großes Interesse, da Dimitrov und Cobolli im vorherigen Spiel überzeugten und als ernsthafte Anwärter auf das Halbfinale galten. Obwohl keine offizielle Begründung veröffentlicht wurde, deuteten teamnahe Quellen auf eine Vorsichtsmaßnahme hin, die mit dem dichten Turnierkalender und Dimitrovs Fokus auf den Einzelwettbewerb zusammenhängt. Der Zeitpunkt des Rückzugs, unmittelbar vor einem wichtigen Match, unterstreicht die strategische Steuerung seiner Belastung in dieser Saisonphase. Für Jourdar und Mendez bedeutete die Entscheidung einen problemlosen Einzug in die nächste Runde ohne Einsatz. Das mexikanische Publikum reagierte enttäuscht, da es ein attraktives Match erwartet hatte, zeigte jedoch Verständnis für die Entscheidung. Der Rückzug verleiht dem Turnierverlauf eine neue Wendung und lässt offen, wie das Duell auf dem Platz ausgesehen hätte.",
+    "ru": "Григор Димитров и Флавио Коболли неожиданно снялись с парного разряда турнира в Акапулько, что позволило их соперникам, Рафаэлю Жордару и Родриго Пачеко Мендесу, автоматически пройти в следующий раунд. Болгаро‑итальянская пара должна была сыграть один из самых ожидаемых четвертьфинальных матчей, однако за несколько часов до встречи было подтверждено, что они не смогут выйти на корт. Решение вызвало большой интерес, поскольку в предыдущем раунде Димитров и Коболли продемонстрировали уверенную игру и считались претендентами на выход в полуфинал. Хотя официальная причина объявлена не была, источники, близкие к команде, сообщили, что речь идет о профилактическом шаге, связанном с плотным графиком и необходимостью для Димитрова сосредоточиться на одиночном разряде. Снятие с турнира непосредственно перед важным матчем подчеркивает стратегический подход к распределению нагрузки болгарского теннисиста на данном этапе сезона. Для Жордара и Мендеса это означало выход в следующий круг без борьбы. Мексиканские болельщики восприняли новость с разочарованием, ожидая зрелищного матча, но проявили уважение к решению игроков. Снятие добавило интриги в развитие турнира и оставило открытым вопрос о том, как могла бы сложиться встреча, если бы Димитров и Коболли сыграли."
+  },
+  "img": "https://www.tennismajors.com/app/uploads/2025/10/Grigor_Dimitrov_2025_RolexarisMasters-1296x675.jpg"
+},
+{
+  "id": 9006,
+  "title": {
+    "bg": "Григор Димитров и Коболи ще играят втори мач на Cancha 1 срещу Ходар и Пачеко Мендес",
+    "en": "Grigor Dimitrov and Cobolli set for second match on Cancha 1 against Jodar and Pacheco Méndez",
+    "es": "Grigor Dimitrov y Cobolli disputarán su segundo partido en la Cancha 1 ante Jodar y Pacheco Méndez",
+    "fr": "Grigor Dimitrov et Cobolli joueront leur deuxième match sur la Cancha 1 contre Jodar et Pacheco Méndez",
+    "it": "Grigor Dimitrov e Cobolli pronti per il secondo match sulla Cancha 1 contro Jodar e Pacheco Méndez",
+    "pt": "Grigor Dimitrov e Cobolli disputarão o segundo jogo na Cancha 1 contra Jodar e Pacheco Méndez",
+    "de": "Grigor Dimitrov und Cobolli bestreiten ihr zweites Match auf Cancha 1 gegen Jodar und Pacheco Méndez",
+    "ru": "Григор Димитров и Коболи проведут второй матч на корте Cancha 1 против Ходара и Пачеко Мендеса"
+  },
+  "text": {
+    "bg": "Григор Димитров и Флавио Коболи продължават силното си представяне в турнира на двойки в Акапулко, след като преодоляха четвъртите поставени Джонсън и Желински в драматичен сблъсък, който им донесе заслужено място на четвъртфиналите. Следващото предизвикателство за българо-италианския тандем ще бъде вторият им мач от програмата на Cancha 1, където ще се изправят срещу динамичния дует Рафаел Ходар и Родриго Пачеко Мендес. Очакванията са за изключително интензивен двубой, тъй като Ходар и Пачеко Мендес са известни със своята агресивна игра от основната линия и способността си да променят ритъма на разиграванията. Димитров и Коболи показаха отлична синхронизация, стабилен сервис и умело покритие на мрежата в първия си мач, което им дава увереност преди новото изпитание. Атмосферата на Cancha 1 традиционно е една от най-енергичните в Акапулко, а феновете очакват зрелищен сблъсък между два коренно различни стила. За Димитров това е още една възможност да демонстрира своя опит и тактическа зрялост, докато Коболи продължава да впечатлява с бързина и прецизност. Мачът обещава високо темпо, множество разигравания на мрежата и битка за всяка точка, като победата ще бъде ключова за продължаването на успешния им поход в турнира.",
+    "en": "Grigor Dimitrov and Flavio Cobolli continue their strong run in the Acapulco doubles draw after defeating the fourth‑seeded Johnson and Zielinski in a tense encounter that secured their place in the quarterfinals. Their next challenge will be their second match scheduled on Cancha 1, where they are set to face the energetic pairing of Rafael Jodar and Rodrigo Pacheco Méndez. Expectations are high for a dynamic and tightly contested battle, as Jodar and Pacheco Méndez are known for their aggressive baseline play and their ability to shift momentum quickly. Dimitrov and Cobolli displayed excellent coordination, a reliable serve and sharp net coverage in their opening match, qualities that will be crucial as they prepare for this new test. Cancha 1 traditionally offers one of the most vibrant atmospheres in Acapulco, and fans anticipate a clash of contrasting styles that could produce long rallies, bold net approaches and intense exchanges. For Dimitrov, the match represents another opportunity to showcase his experience and tactical maturity, while Cobolli continues to impress with his speed, precision and growing confidence. The upcoming encounter promises high tempo, strategic variety and a fierce fight for every point, with the winners gaining valuable momentum in their pursuit of a deep run in the tournament.",
+    "es": "Grigor Dimitrov y Flavio Cobolli mantienen su excelente rendimiento en el cuadro de dobles de Acapulco tras superar a los cuartos cabezas de serie Johnson y Zielinski en un duelo muy disputado que les aseguró un lugar en los cuartos de final. Su siguiente desafío será su segundo partido programado en la Cancha 1, donde se enfrentarán a la pareja dinámica formada por Rafael Jodar y Rodrigo Pacheco Méndez. Se espera un encuentro intenso y equilibrado, ya que Jodar y Pacheco Méndez destacan por su juego agresivo desde el fondo de la pista y su capacidad para cambiar el ritmo de los puntos. Dimitrov y Cobolli mostraron una coordinación impecable, un servicio sólido y una excelente cobertura en la red durante su debut, aspectos que serán fundamentales para afrontar este nuevo reto. La Cancha 1 suele ofrecer un ambiente vibrante y apasionado, y los aficionados aguardan un choque de estilos que podría derivar en intercambios largos, subidas valientes a la red y momentos de gran tensión. Para Dimitrov, el partido representa otra oportunidad de demostrar su experiencia y madurez táctica, mientras que Cobolli continúa impresionando con su velocidad, precisión y creciente seguridad. El duelo promete un ritmo elevado, variedad estratégica y una lucha intensa por cada punto, con la victoria como impulso clave hacia las rondas finales del torneo.",
+    "fr": "Grigor Dimitrov et Flavio Cobolli poursuivent leur excellente dynamique dans le tableau de double d’Acapulco après avoir battu les quatrièmes têtes de série Johnson et Zielinski dans un match tendu qui leur a assuré une place en quart de finale. Leur prochain défi sera leur deuxième match programmé sur la Cancha 1, où ils affronteront le duo énergique composé de Rafael Jodar et Rodrigo Pacheco Méndez. On s’attend à une rencontre intense et très disputée, Jodar et Pacheco Méndez étant connus pour leur jeu agressif en fond de court et leur capacité à changer rapidement le rythme des échanges. Dimitrov et Cobolli ont montré une excellente coordination, un service fiable et une présence affûtée au filet lors de leur premier match, des qualités essentielles pour ce nouveau test. La Cancha 1 offre traditionnellement l’une des ambiances les plus vibrantes d’Acapulco, et les fans anticipent un duel de styles contrastés pouvant produire de longs échanges, des montées au filet audacieuses et des moments de grande intensité. Pour Dimitrov, ce match est une nouvelle occasion de démontrer son expérience et sa maturité tactique, tandis que Cobolli continue d’impressionner par sa vitesse, sa précision et sa confiance grandissante. La rencontre promet un rythme élevé, une variété stratégique et une lutte acharnée pour chaque point, la victoire pouvant donner un élan crucial pour la suite du tournoi.",
+    "it": "Grigor Dimitrov e Flavio Cobolli proseguono il loro ottimo percorso nel tabellone di doppio di Acapulco dopo aver superato i quarti teste di serie Johnson e Zielinski in una sfida combattuta che ha garantito loro l’accesso ai quarti di finale. Il prossimo impegno sarà il loro secondo match in programma sulla Cancha 1, dove affronteranno la vivace coppia composta da Rafael Jodar e Rodrigo Pacheco Méndez. Le aspettative sono alte per un incontro intenso e ricco di scambi, poiché Jodar e Pacheco Méndez sono noti per il loro gioco aggressivo da fondo campo e per la capacità di modificare rapidamente il ritmo degli scambi. Dimitrov e Cobolli hanno mostrato grande intesa, un servizio affidabile e un’ottima presenza a rete nel loro debutto, qualità che saranno decisive per affrontare questa nuova sfida. La Cancha 1 è tradizionalmente uno dei campi più calorosi di Acapulco, e il pubblico attende un confronto tra stili differenti che potrebbe generare scambi lunghi, attacchi coraggiosi a rete e momenti di grande intensità. Per Dimitrov sarà un’ulteriore occasione per mettere in mostra la sua esperienza e maturità tattica, mentre Cobolli continua a stupire con velocità, precisione e crescente fiducia. Il match promette ritmo elevato, varietà strategica e una battaglia serrata per ogni punto, con la vittoria che potrebbe dare un impulso decisivo verso le fasi avanzate del torneo.",
+    "pt": "Grigor Dimitrov e Flavio Cobolli seguem em excelente forma na chave de duplas de Acapulco após derrotarem os cabeças de série número quatro, Johnson e Zielinski, em um confronto equilibrado que lhes garantiu vaga nas quartas de final. O próximo desafio será o segundo jogo da dupla na Cancha 1, onde enfrentarão a enérgica parceria de Rafael Jodar e Rodrigo Pacheco Méndez. A expectativa é de um duelo intenso e muito competitivo, já que Jodar e Pacheco Méndez são conhecidos pelo estilo agressivo no fundo da quadra e pela capacidade de alterar o ritmo dos pontos. Dimitrov e Cobolli demonstraram excelente sintonia, um serviço consistente e grande presença na rede em sua estreia, características que serão fundamentais para este novo teste. A Cancha 1 costuma proporcionar uma atmosfera vibrante e apaixonada, e os torcedores aguardam um confronto de estilos contrastantes que pode resultar em ralis longos, subidas ousadas à rede e trocas de alta intensidade. Para Dimitrov, o jogo representa mais uma oportunidade de exibir sua experiência e maturidade tática, enquanto Cobolli continua a impressionar com velocidade, precisão e confiança crescente. O duelo promete ritmo acelerado, variedade estratégica e uma disputa acirrada por cada ponto, com a vitória podendo impulsionar a dupla rumo às fases decisivas do torneio.",
+    "de": "Grigor Dimitrov und Flavio Cobolli setzen ihren starken Lauf im Doppelbewerb von Acapulco fort, nachdem sie die an Nummer vier gesetzten Johnson und Zielinski in einem hart umkämpften Duell besiegt und sich damit den Einzug ins Viertelfinale gesichert haben. Ihre nächste Aufgabe ist ihr zweites Match auf der Cancha 1, wo sie auf das energiegeladene Duo Rafael Jodar und Rodrigo Pacheco Méndez treffen werden. Es wird ein intensives und ausgeglichenes Duell erwartet, da Jodar und Pacheco Méndez für ihr aggressives Grundlinienspiel und ihre Fähigkeit bekannt sind, den Rhythmus eines Ballwechsels schnell zu verändern. Dimitrov und Cobolli überzeugten in ihrem Auftaktmatch mit hervorragender Abstimmung, einem stabilen Aufschlag und starkem Netzspiel, was ihnen wertvolle Zuversicht für die kommende Herausforderung gibt. Die Cancha 1 bietet traditionell eine der lebhaftesten Atmosphären in Acapulco, und die Fans freuen sich auf ein Aufeinandertreffen zweier unterschiedlicher Spielstile, das lange Ballwechsel, mutige Netzangriffe und hochintensive Momente verspricht. Für Dimitrov ist es eine weitere Gelegenheit, seine Erfahrung und taktische Reife zu demonstrieren, während Cobolli weiterhin mit Schnelligkeit, Präzision und wachsendem Selbstvertrauen beeindruckt. Das Match verspricht hohes Tempo, strategische Vielfalt und einen erbitterten Kampf um jeden Punkt, wobei der Sieger wertvollen Schwung für den weiteren Turnierverlauf mitnehmen wird.",
+    "ru": "Григор Димитров и Флавио Коболи продолжают уверенное выступление в парном разряде турнира в Акапулько, одержав важную победу над четвертыми сеяными Джонсоном и Желински в напряжённом матче, который вывел их в четвертьфинал. Следующее испытание для дуэта станет их второй матч в программе на корте Cancha 1, где им предстоит встретиться с энергичной парой Рафаэлем Ходаром и Родриго Пачеко Мендесом. Ожидается напряжённая и динамичная игра, поскольку Ходар и Пачеко Мендес известны своим агрессивным стилем на задней линии и умением резко менять темп розыгрышей. Димитров и Коболи продемонстрировали отличное взаимодействие, стабильную подачу и уверенную игру у сетки в своём первом матче, что придаёт им уверенности перед новым вызовом. Атмосфера на Cancha 1 традиционно отличается особой энергией, и болельщики ждут зрелищного столкновения двух разных игровых философий, которое может подарить длинные розыгрыши, смелые выходы к сетке и множество напряжённых моментов. Для Димитрова это ещё один шанс показать свой опыт и тактическую зрелость, а Коболи продолжает впечатлять скоростью, точностью и растущей уверенностью. Предстоящий матч обещает высокий темп, разнообразие стратегий и ожесточённую борьбу за каждое очко, а победа станет важным шагом на пути к дальнейшему успеху в турнире."
+  },
+  "img": "https://www.atptour.com/-/media/images/news/2024/09/04/09/37/dimitrov-us-open-2024-reaction-wednesday.jpg"
+},
+{
+  "id": 9007,
+  "title": {
+    "bg": "Какво се случва с Григор Димитров? Четвърта поредна загуба и трудното завръщане след контузията срещу Синер",
+    "en": "What is happening with Grigor Dimitrov? Four straight losses and a difficult return after the injury against Sinner",
+    "es": "¿Qué está pasando con Grigor Dimitrov? Cuatro derrotas seguidas y un difícil regreso tras la lesión contra Sinner",
+    "fr": "Que se passe‑t‑il avec Grigor Dimitrov ? Quatre défaites consécutives et un retour difficile après la blessure contre Sinner",
+    "it": "Cosa sta succedendo a Grigor Dimitrov? Quattro sconfitte consecutive e un ritorno difficile dopo l’infortunio contro Sinner",
+    "pt": "O que está acontecendo com Grigor Dimitrov? Quatro derrotas seguidas e um retorno difícil após a lesão contra Sinner",
+    "de": "Was ist mit Grigor Dimitrov los? Vier Niederlagen in Folge und ein schwieriges Comeback nach der Verletzung gegen Sinner",
+    "ru": "Что происходит с Григором Димитровым? Четвёртое поражение подряд и трудное возвращение после травмы против Синнера"
+  },
+  "text": {
+    "bg": "Григор Димитров преживява един от най-трудните периоди в последните години, след като отпадна от Артур Атмане и записа четвърта поредна загуба. Формата му видимо се колебае, а причините се коренят в тежката травма на гръдния мускул, която получи срещу Яник Синер на Уимбълдън. Тогава Димитров водеше с два сета и играеше на изключително високо ниво, но внезапната болка го принуди да се оттегли, а последвалото лечение и възстановяване се оказаха по-дълги и по-сложни от очакваното. Според думите му след контузията той е променил подхода си към играта, като се опитва да адаптира техниката и натоварването, за да избегне ново увреждане. Това обаче води до колебания в ударите, по-бавни реакции и липса на агресия, която преди беше отличителна за стила му. Въпреки усилените тренировки и работата с новия екип, включително с Дейвид Налбандян и Ксавие Малис, Димитров все още търси оптималния ритъм. Последните му мачове показват, че физически е по-добре, но психологическият натиск и липсата на увереност влияят на представянето му. Загубата от Атмане е още един знак, че възстановяването му не е завършено и че му предстои труден път обратно към нивото, което демонстрираше преди травмата. Въпреки това българинът остава борбен, мотивиран и решен да се върне сред най-добрите, като продължава да работи върху играта си и да търси стабилност в предстоящите турнири.",
+    "en": "Grigor Dimitrov is going through one of the most challenging stretches of his recent career after losing to Arthur Fils Atmane, marking his fourth consecutive defeat. His form has visibly dipped, and much of it traces back to the pectoral injury he suffered against Jannik Sinner at Wimbledon. At the time, Dimitrov was leading by two sets and playing some of his best tennis, but the sudden pain forced him to retire, and the recovery process proved longer and more complicated than expected. Since then, he has admitted to changing his approach on court, adjusting his technique and workload to avoid re‑injury. These adjustments, however, have resulted in inconsistencies, slower reactions and a noticeable lack of the natural aggression that once defined his game. Despite intense training and the support of his revamped coaching team, including David Nalbandian and Xavier Malisse, Dimitrov is still searching for rhythm and confidence. His recent matches show physical improvement, yet the psychological pressure and uncertainty continue to affect his performance. The loss to Atmane is another sign that his comeback is still incomplete and that he faces a difficult road back to the level he displayed before the injury. Even so, Dimitrov remains determined, hardworking and focused on rebuilding his form as he prepares for the upcoming tournaments.",
+    "es": "Grigor Dimitrov atraviesa uno de los periodos más complicados de su carrera reciente tras caer ante Arthur Fils Atmane, acumulando así su cuarta derrota consecutiva. Su nivel ha disminuido de forma evidente y gran parte de ello se remonta a la lesión en el músculo pectoral que sufrió frente a Jannik Sinner en Wimbledon. En aquel momento, Dimitrov dominaba el partido con dos sets de ventaja y mostraba un tenis brillante, pero el dolor repentino lo obligó a retirarse, iniciando un proceso de recuperación más largo y complejo de lo previsto. Desde entonces, ha reconocido que ha cambiado su enfoque en la pista, ajustando su técnica y carga de trabajo para evitar una recaída. Sin embargo, estos cambios han provocado irregularidad, reacciones más lentas y una pérdida de la agresividad natural que caracterizaba su estilo. A pesar de los entrenamientos intensos y del apoyo de su renovado equipo técnico, que incluye a David Nalbandian y Xavier Malisse, Dimitrov sigue buscando ritmo y confianza. Sus últimos partidos muestran una mejoría física, pero la presión mental y la falta de seguridad continúan afectando su rendimiento. La derrota ante Atmane es otra señal de que su regreso aún no está completo y de que le espera un camino difícil para recuperar el nivel previo a la lesión. Aun así, Dimitrov se mantiene decidido, trabajador y enfocado en reconstruir su juego de cara a los próximos torneos.",
+    "fr": "Grigor Dimitrov traverse l’une des périodes les plus difficiles de sa carrière récente après sa défaite contre Arthur Fils Atmane, qui marque sa quatrième défaite consécutive. Sa forme a visiblement chuté, et cela remonte en grande partie à la blessure au muscle pectoral qu’il a subie face à Jannik Sinner à Wimbledon. À ce moment‑là, Dimitrov menait par deux sets et jouait un tennis exceptionnel, mais une douleur soudaine l’a forcé à abandonner, et la récupération s’est révélée plus longue et plus complexe que prévu. Depuis, il a admis avoir modifié son approche sur le court, ajustant sa technique et sa charge de travail pour éviter une nouvelle blessure. Ces changements ont toutefois entraîné des irrégularités, des réactions plus lentes et une perte de l’agressivité naturelle qui caractérisait autrefois son jeu. Malgré un entraînement intensif et le soutien de son nouveau staff, incluant David Nalbandian et Xavier Malisse, Dimitrov cherche encore son rythme et sa confiance. Ses derniers matchs montrent une amélioration physique, mais la pression mentale et le manque de certitude continuent d’affecter ses performances. La défaite contre Atmane confirme que son retour n’est pas encore achevé et qu’un chemin difficile l’attend pour retrouver son niveau d’avant blessure. Néanmoins, il reste déterminé, travailleur et concentré sur la reconstruction de son jeu en vue des prochains tournois.",
+    "it": "Grigor Dimitrov sta vivendo uno dei momenti più difficili degli ultimi anni dopo la sconfitta contro Arthur Fils Atmane, che rappresenta la sua quarta battuta d’arresto consecutiva. Il suo rendimento è chiaramente calato e le cause risalgono al grave infortunio al muscolo pettorale subito contro Jannik Sinner a Wimbledon. In quell’occasione Dimitrov conduceva per due set e stava esprimendo un tennis straordinario, ma il dolore improvviso lo costrinse al ritiro, dando inizio a un recupero più lungo e complesso del previsto. Da allora ha ammesso di aver modificato il suo approccio in campo, adattando tecnica e carichi di lavoro per evitare una ricaduta. Questi cambiamenti, però, hanno portato a discontinuità, reazioni più lente e una perdita dell’aggressività naturale che un tempo caratterizzava il suo stile. Nonostante gli allenamenti intensi e il supporto del nuovo team tecnico, che comprende David Nalbandian e Xavier Malisse, Dimitrov è ancora alla ricerca del ritmo e della fiducia necessari. Le sue recenti prestazioni mostrano un miglioramento fisico, ma la pressione mentale e l’incertezza continuano a condizionarlo. La sconfitta contro Atmane conferma che il suo ritorno non è ancora completo e che lo attende un percorso impegnativo per tornare al livello mostrato prima dell’infortunio. Tuttavia, Dimitrov rimane determinato, disciplinato e concentrato nel tentativo di ritrovare la miglior versione di sé nei prossimi tornei.",
+    "pt": "Grigor Dimitrov atravessa um dos períodos mais difíceis da sua carreira recente após a derrota para Arthur Fils Atmane, que marcou a sua quarta perda consecutiva. O seu rendimento caiu visivelmente e muito disso remonta à lesão no músculo peitoral sofrida contra Jannik Sinner em Wimbledon. Naquele momento, Dimitrov vencia por dois sets e apresentava um ténis de altíssimo nível, mas a dor repentina obrigou‑o a abandonar o encontro, iniciando um processo de recuperação mais longo e complexo do que o esperado. Desde então, admitiu ter mudado a abordagem em court, ajustando técnica e carga de trabalho para evitar nova lesão. No entanto, essas adaptações resultaram em irregularidade, reações mais lentas e perda da agressividade natural que antes definia o seu estilo. Apesar dos treinos intensos e do apoio da nova equipa técnica, que inclui David Nalbandian e Xavier Malisse, Dimitrov continua à procura de ritmo e confiança. Os seus últimos jogos mostram evolução física, mas a pressão psicológica e a falta de segurança ainda afetam o seu desempenho. A derrota para Atmane é mais um sinal de que o seu regresso ainda não está concluído e de que terá um caminho difícil para recuperar o nível anterior à lesão. Mesmo assim, Dimitrov mantém‑se determinado, dedicado e focado em reconstruir o seu jogo para os próximos torneios.",
+    "de": "Grigor Dimitrov erlebt derzeit eine seiner schwierigsten Phasen der letzten Jahre, nachdem er gegen Arthur Fils Atmane verloren und damit seine vierte Niederlage in Folge kassiert hat. Seine Formschwäche lässt sich deutlich auf die Brustmuskelverletzung zurückführen, die er im Wimbledon‑Match gegen Jannik Sinner erlitt. Damals führte Dimitrov mit zwei Sätzen und spielte auf herausragendem Niveau, doch der plötzliche Schmerz zwang ihn zum Rückzug, und die anschließende Genesung dauerte länger und verlief komplizierter als erwartet. Seitdem hat er zugegeben, seinen Ansatz auf dem Platz geändert zu haben, wobei er Technik und Belastung anpasst, um eine erneute Verletzung zu vermeiden. Diese Veränderungen führen jedoch zu Unbeständigkeit, langsameren Reaktionen und einem Verlust der früheren Aggressivität. Trotz intensiver Trainingsarbeit und der Unterstützung seines neu formierten Teams, darunter David Nalbandian und Xavier Malisse, sucht Dimitrov weiterhin nach Rhythmus und Selbstvertrauen. Seine jüngsten Auftritte zeigen zwar körperliche Fortschritte, doch der mentale Druck und die Unsicherheit beeinträchtigen weiterhin sein Spiel. Die Niederlage gegen Atmane ist ein weiteres Zeichen dafür, dass sein Comeback noch nicht abgeschlossen ist und dass ein schwieriger Weg vor ihm liegt, um das Niveau vor der Verletzung wieder zu erreichen. Dennoch bleibt Dimitrov entschlossen, fleißig und fokussiert, um seine Form in den kommenden Turnieren wiederzufinden.",
+    "ru": "Григор Димитров переживает один из самых сложных периодов в своей карьере после поражения от Артура Филса Атмане, ставшего для него четвёртым подряд. Его игра заметно просела, и многое связано с травмой грудной мышцы, полученной в матче против Янника Синнера на Уимблдоне. Тогда Димитров вёл по сетам 2:0 и демонстрировал великолепный теннис, но внезапная боль вынудила его сняться, а восстановление оказалось более долгим и трудным, чем ожидалось. Позже он признался, что изменил подход к игре, корректируя технику и нагрузки, чтобы избежать повторной травмы. Эти изменения привели к нестабильности, более медленным реакциям и утрате прежней агрессивности. Несмотря на интенсивные тренировки и поддержку обновлённого тренерского штаба, включающего Давида Налбандяна и Ксавье Малисса, Димитров всё ещё ищет уверенность и игровой ритм. Его последние матчи показывают физический прогресс, но психологическое давление и неуверенность продолжают сказываться на результатах. Поражение от Атмане — очередной сигнал, что его возвращение ещё не завершено и впереди трудный путь к уровню, который он демонстрировал до травмы. Тем не менее Димитров остаётся мотивированным, трудолюбивым и нацеленным на восстановление формы в предстоящих турнирах."
+  },
+  "img": "https://a57.foxnews.com/static.foxnews.com/foxnews.com/content/uploads/2025/07/1200/675/grigor-dimitrov.jpg?ve=1&tl=1"
+},
+{
+  "id": 9008,
+  "title": {
+    "bg": "Григор Димитров отпадна от Акапулко след загуба от Атмане",
+    "en": "Grigor Dimitrov exits Acapulco after defeat to Atmane",
+    "es": "Grigor Dimitrov queda eliminado de Acapulco tras caer ante Atmane",
+    "fr": "Grigor Dimitrov quitte Acapulco après une défaite contre Atmane",
+    "it": "Grigor Dimitrov esce da Acapulco dopo la sconfitta contro Atmane",
+    "pt": "Grigor Dimitrov é eliminado de Acapulco após derrota para Atmane",
+    "de": "Grigor Dimitrov scheidet in Acapulco nach Niederlage gegen Atmane aus",
+    "ru": "Григор Димитров вылетел из Акапулько после поражения от Атмане"
+  },
+  "text": {
+    "bg": "Григор Димитров приключи участието си на турнира в Акапулко още в първия кръг, след като претърпя разочароваща загуба с 3:6, 3:6 от французина Терънс Атмане – резултат, който подчертава трудния период, през който преминава българинът. Срещата се игра на Estadio Arena GNP Seguros и премина под диктовката на Атмане, който демонстрира агресивен стил, стабилност от основната линия и увереност в ключовите разигравания. Димитров, който наскоро добави Давид Налбандян към треньорския си щаб, така и не успя да намери ритъм, като особено проблемен се оказа вторият му сервис – спечели едва шест от двадесет и три разиграни точки, което позволи на съперника му да атакува без колебание. Въпреки опита и класата си, българинът не успя да наложи темпо, да диктува разиграванията или да използва характерните си вариации, а Атмане контролираше мача с увереност и прецизност. Загубата е четвърта поред за Димитров, който продължава да търси формата си след труден период, белязан от контузии и промени в подготовката. Въпреки разочарованието, участието му в Акапулко показва желание за рестарт и търсене на нов импулс, а предстоящите турнири ще бъдат ключови за връщането му към победния ритъм.",
+    "en": "Grigor Dimitrov’s campaign at the Mexican Open in Acapulco came to an abrupt end in the opening round after a 6–3, 6–3 defeat to France’s Terence Atmane, a result that reflects the Bulgarian’s ongoing struggle to regain consistency and confidence. Played at the Estadio Arena GNP Seguros, the match unfolded with Atmane dictating the pace through assertive baseline play, sharp returns and a composed tactical approach. Dimitrov, who recently added David Nalbandian to his coaching team in an effort to rebuild his form, was unable to find stability throughout the encounter, particularly on his second serve where he won only six of twenty‑three points. This weakness allowed Atmane to apply constant pressure and seize control of the rallies. Despite Dimitrov’s experience, variety and natural shot‑making talent, he struggled to impose his rhythm or disrupt Atmane’s momentum. The loss marks his fourth consecutive defeat, extending a difficult stretch marked by injuries, adjustments and a search for renewed structure in his game. Still, his presence in Acapulco signals determination to reset and rebuild, and the upcoming tournaments will be crucial in assessing whether this new coaching direction can help him rediscover his competitive edge.",
+    "es": "La participación de Grigor Dimitrov en el Abierto Mexicano de Acapulco terminó de forma prematura tras caer por 6‑3 y 6‑3 ante el francés Terence Atmane en la primera ronda, un resultado que refleja el complicado momento que atraviesa el búlgaro. El duelo, disputado en el Estadio Arena GNP Seguros, estuvo dominado por Atmane, quien impuso un ritmo agresivo desde el fondo de la pista, devoluciones profundas y una estrategia clara que le permitió controlar los intercambios. Dimitrov, que recientemente incorporó a David Nalbandian a su equipo técnico con la intención de recuperar sensaciones, no logró encontrar estabilidad en ningún tramo del partido, especialmente con su segundo servicio, con el que ganó solo seis de veintitrés puntos. Esta fragilidad permitió que Atmane presionara constantemente y manejara el desarrollo del encuentro. A pesar de su experiencia y talento, Dimitrov no consiguió imponer su estilo ni frenar el impulso del francés. La derrota supone su cuarto tropiezo consecutivo y prolonga una etapa marcada por lesiones, cambios y búsqueda de regularidad. Aun así, su presencia en Acapulco demuestra su determinación por reconstruir su juego, y los próximos torneos serán decisivos para evaluar si el nuevo enfoque puede devolverle la confianza.",
+    "fr": "La campagne de Grigor Dimitrov à l’Open du Mexique à Acapulco s’est terminée dès le premier tour après une défaite 6–3, 6–3 face au Français Terence Atmane, un résultat qui illustre les difficultés persistantes du Bulgare à retrouver stabilité et confiance. Disputé à l’Estadio Arena GNP Seguros, le match a été dominé par Atmane, qui a imposé son rythme grâce à un jeu agressif depuis la ligne de fond, des retours incisifs et une approche tactique maîtrisée. Dimitrov, qui a récemment ajouté David Nalbandian à son équipe d’entraîneurs pour relancer sa forme, n’a jamais réussi à trouver de la stabilité, notamment sur sa seconde balle, où il n’a remporté que six des vingt‑trois points joués. Cette faiblesse a permis à Atmane d’exercer une pression constante et de contrôler les échanges. Malgré son expérience, sa variété de jeu et son talent naturel, Dimitrov n’a pas réussi à imposer son rythme ni à perturber la dynamique de son adversaire. Cette défaite constitue sa quatrième consécutive et prolonge une période difficile marquée par des blessures, des ajustements et la recherche d’une nouvelle structure de jeu. Sa présence à Acapulco montre toutefois sa volonté de repartir de zéro, et les prochains tournois seront déterminants pour savoir si cette nouvelle direction peut lui permettre de retrouver son niveau compétitif.",
+    "it": "L’avventura di Grigor Dimitrov all’ATP 500 di Acapulco si è conclusa già al primo turno con una sconfitta per 6‑3, 6‑3 contro il francese Terence Atmane, un risultato che evidenzia le difficoltà che il bulgaro sta attraversando nel ritrovare continuità e fiducia. Sul campo dell’Estadio Arena GNP Seguros, Atmane ha imposto il proprio ritmo grazie a un gioco aggressivo da fondo campo, risposte incisive e una gestione tattica lucida che gli ha permesso di controllare gli scambi. Dimitrov, che di recente ha aggiunto David Nalbandian al suo team tecnico per dare una nuova direzione alla sua preparazione, non è riuscito a trovare stabilità, soprattutto con il secondo servizio, con cui ha vinto soltanto sei dei ventitré punti disputati. Questa vulnerabilità ha consentito ad Atmane di mantenere costante pressione e di guidare il match. Nonostante l’esperienza e la qualità tecnica, Dimitrov non è riuscito a imporre il proprio ritmo né a spezzare la continuità dell’avversario. La sconfitta rappresenta il suo quarto ko consecutivo e conferma un periodo complesso segnato da infortuni, cambiamenti e ricerca di nuove soluzioni. Tuttavia, la sua presenza ad Acapulco testimonia la volontà di ripartire, e i prossimi tornei saranno fondamentali per capire se il nuovo percorso potrà riportarlo ai livelli desiderati.",
+    "pt": "A campanha de Grigor Dimitrov no ATP 500 de Acapulco terminou logo na primeira ronda após uma derrota por 6‑3 e 6‑3 diante do francês Terence Atmane, um resultado que evidencia as dificuldades que o búlgaro enfrenta para recuperar consistência e confiança. No Estadio Arena GNP Seguros, Atmane assumiu o controlo do encontro com um jogo agressivo a partir da linha de fundo, devoluções firmes e uma abordagem tática equilibrada que lhe permitiu dominar os pontos mais importantes. Dimitrov, que recentemente integrou David Nalbandian na sua equipa técnica numa tentativa de reencontrar o melhor nível, não conseguiu estabilizar o seu jogo, sobretudo no segundo serviço, onde venceu apenas seis de vinte e três pontos. Essa fragilidade abriu espaço para que Atmane mantivesse pressão constante e conduzisse o ritmo do duelo. Apesar da sua experiência e talento natural, Dimitrov não conseguiu impor o seu estilo nem travar o ímpeto do adversário. A derrota representa o seu quarto desaire consecutivo e prolonga um período marcado por lesões, ajustes e busca de um novo rumo competitivo. Ainda assim, a sua presença em Acapulco demonstra determinação em reconstruir o seu jogo, e os próximos torneios serão decisivos para avaliar se esta nova fase pode devolver‑lhe a confiança.",
+    "de": "Grigor Dimitrov ist beim ATP‑500‑Turnier in Acapulco bereits in der ersten Runde ausgeschieden, nachdem er dem Franzosen Terence Atmane mit 6:3, 6:3 unterlag – ein Ergebnis, das die anhaltenden Schwierigkeiten des Bulgaren unterstreicht, seine Form und Stabilität wiederzufinden. Auf dem Estadio Arena GNP Seguros diktierte Atmane das Geschehen mit druckvollem Grundlinienspiel, präzisen Rückschlägen und einer klaren taktischen Linie, die ihm erlaubte, die entscheidenden Ballwechsel zu kontrollieren. Dimitrov, der kürzlich David Nalbandian in sein Trainerteam aufgenommen hat, fand während der gesamten Partie keinen Rhythmus, insbesondere beim zweiten Aufschlag, bei dem er nur sechs von dreiundzwanzig Punkten gewann. Diese Schwäche eröffnete Atmane die Möglichkeit, konstant Druck auszuüben und das Tempo zu bestimmen. Trotz seiner Erfahrung und spielerischen Klasse gelang es Dimitrov nicht, sein variables Spiel einzusetzen oder den Lauf des Franzosen zu brechen. Die Niederlage ist seine vierte in Folge und bestätigt eine schwierige Phase, geprägt von Verletzungen, Umstellungen und der Suche nach neuer Stabilität. Dennoch zeigt seine Teilnahme in Acapulco den Willen zum Neustart, und die kommenden Turniere werden entscheidend sein, um zu sehen, ob der neue Weg Früchte trägt.",
+    "ru": "Григор Димитров завершил своё выступление на турнире в Акапулько уже в первом раунде, уступив французу Терэнсу Атмане со счётом 6:3, 6:3 — результат, подчёркивающий непростой период, который переживает болгарский теннисист. Матч на Estadio Arena GNP Seguros проходил под контролем Атмане, который уверенно действовал на задней линии, агрессивно принимал подачу и грамотно выстраивал тактический рисунок игры. Димитров, недавно добавивший Давида Налбандяна в свой тренерский штаб, так и не смог обрести стабильность, особенно на второй подаче, где выиграл лишь шесть из двадцати трёх розыгрышей. Эта уязвимость позволила Атмане постоянно давить и контролировать ход встречи. Несмотря на опыт и техническое мастерство, Димитров не сумел навязать свой темп или нарушить уверенность соперника. Поражение стало для него четвёртым подряд и продолжило сложный этап, связанный с травмами, перестройкой подготовки и поиском нового игрового баланса. Тем не менее участие в Акапулько демонстрирует его стремление перезапустить сезон, а предстоящие турниры покажут, сможет ли он вернуть себе прежнюю уверенность."
+  },
+  "img": "https://www.thenews.com.pk/assets/uploads/akhbar/2024-09-05/1227086_7972534_Dimitrov-looks-for-positives-after-more-Grand-Slam-disappointment_akhbar.jpg"
+},
+{
+  "id": 9009,
+  "title": {
+    "bg": "АТП Акапулко – Григор Димитров започва срещу Атмане и играе на двойки с Флавио Кобили",
+    "en": "ATP Acapulco – Grigor Dimitrov to face Atmane in the opening round and team up with Flavio Cobolli in doubles",
+    "es": "ATP Acapulco – Grigor Dimitrov debutará ante Atmane y jugará dobles junto a Flavio Cobolli",
+    "fr": "ATP Acapulco – Grigor Dimitrov débutera contre Atmane et jouera en double avec Flavio Cobolli",
+    "it": "ATP Acapulco – Grigor Dimitrov apre contro Atmane e giocherà il doppio con Flavio Cobolli",
+    "pt": "ATP Acapulco – Grigor Dimitrov estreia contra Atmane e disputará duplas ao lado de Flavio Cobolli",
+    "de": "ATP Acapulco – Grigor Dimitrov trifft zum Auftakt auf Atmane und spielt Doppel mit Flavio Cobolli",
+    "ru": "АТП Акапулько – Григор Димитров начнёт против Атмане и сыграет в паре с Флавио Коболли"
+  },
+  "text": {
+    "bg": "Григор Димитров започва участието си на силния турнир ATP 500 в Акапулко с интригуващ двубой срещу французина Теренс Атмане, който се очертава като едно от най-интересните предизвикателства в първия кръг. Българинът пристига в Мексико в отлична форма и с амбицията да затвърди стабилните си резултати от началото на сезона. Атмане е състезател с агресивен стил и мощен сервис, което обещава динамичен и напрегнат мач, в който Димитров ще трябва да демонстрира своя опит, вариативност и тактическа зрялост. Освен в сингъл, Григор ще вземе участие и в турнира по двойки, където ще си партнира с италианеца Флавио Кобили. Двамата ще се изправят срещу силни и опитни съперници, което прави надпреварата още по-вълнуваща. Участието на Димитров в две дисциплини подчертава желанието му да натрупа повече игрова практика и да се бори за дълбоко класиране както в сингъл, така и в двойки. Турнирът в Акапулко традиционно предлага високо ниво на конкуренция, а атмосферата и подкрепата на публиката създават допълнителен заряд, който често води до зрелищни и драматични мачове. Българската звезда влиза уверено в надпреварата и феновете очакват с нетърпение неговото представяне както срещу Атмане, така и в партньорство с Кобили.",
+    "en": "Grigor Dimitrov is set to begin his campaign at the prestigious ATP 500 event in Acapulco with a compelling first‑round encounter against the talented Frenchman Terence Atmane, a matchup that promises intensity and high‑quality tennis from the very first exchanges. Dimitrov arrives in Mexico in excellent form, looking to build on his strong performances earlier in the season and to assert himself once again among the top contenders. Atmane’s aggressive baseline play and powerful serve are expected to test Dimitrov’s versatility, court coverage and tactical intelligence, setting the stage for a dynamic and unpredictable battle. In addition to his singles run, Dimitrov will also compete in the doubles draw, teaming up with Italy’s Flavio Cobolli. The pair will face a challenging field filled with experienced doubles specialists, making their participation an exciting storyline for fans. Dimitrov’s decision to play both singles and doubles highlights his determination to gain rhythm, accumulate match time and push for deep runs in both disciplines. The Acapulco tournament is known for its electric atmosphere, passionate crowds and demanding conditions, all of which contribute to memorable matches and dramatic moments. With confidence and ambition, Dimitrov enters the event ready to showcase his talent against Atmane and to build strong chemistry alongside Cobolli in the doubles competition.",
+    "es": "Grigor Dimitrov iniciará su participación en el prestigioso torneo ATP 500 de Acapulco con un atractivo duelo de primera ronda ante el francés Terence Atmane, un enfrentamiento que promete intensidad, ritmo elevado y un tenis de gran calidad desde los primeros intercambios. El búlgaro llega a México en un excelente estado de forma y con la intención de consolidar el buen nivel mostrado en las últimas semanas. Atmane, conocido por su estilo agresivo desde el fondo y un servicio potente, exigirá a Dimitrov máxima concentración, variedad táctica y precisión en los momentos clave. Además de su participación en individuales, Dimitrov competirá también en el cuadro de dobles junto al italiano Flavio Cobolli, formando una pareja que despierta curiosidad por su combinación de estilos y ambición competitiva. El torneo de Acapulco, famoso por su ambiente vibrante, sus aficionados apasionados y las exigentes condiciones de juego, suele ofrecer partidos emocionantes y llenos de dramatismo. Con determinación y confianza, Dimitrov afronta el desafío de medirse a Atmane y de construir una sólida colaboración con Cobolli en la modalidad de dobles.",
+    "fr": "Grigor Dimitrov entame sa campagne au prestigieux tournoi ATP 500 d’Acapulco avec un premier tour particulièrement intéressant face au Français Terence Atmane, un duel qui promet intensité, rythme soutenu et tennis de très haut niveau dès les premiers échanges. Le Bulgare arrive au Mexique en excellente forme et avec l’ambition de confirmer les performances solides qu’il a affichées depuis le début de la saison. Atmane, joueur agressif doté d’un service puissant, représente un adversaire dangereux qui mettra à l’épreuve la variété, la couverture de terrain et l’intelligence tactique de Dimitrov. En plus du simple, Dimitrov participera également au tableau de double aux côtés de l’Italien Flavio Cobolli, une association intrigante qui pourrait surprendre par sa complémentarité. Le tournoi d’Acapulco est réputé pour son atmosphère électrique, son public passionné et ses conditions exigeantes, qui donnent souvent lieu à des matchs spectaculaires et riches en émotions. Avec confiance et détermination, Dimitrov aborde l’épreuve prêt à affronter Atmane et à construire une collaboration efficace avec Cobolli en double.",
+    "it": "Grigor Dimitrov si prepara a inaugurare la sua avventura nell’importante torneo ATP 500 di Acapulco con un affascinante incontro di primo turno contro il francese Terence Atmane, una sfida che promette ritmo elevato, scambi intensi e tennis di altissimo livello. Il bulgaro arriva in Messico in ottima condizione fisica e mentale, desideroso di confermare le buone prestazioni mostrate nelle ultime settimane e di spingersi in profondità nel tabellone. Atmane, giocatore dal servizio esplosivo e dal gioco aggressivo da fondo campo, rappresenta un avversario insidioso che metterà alla prova la varietà tecnica, la mobilità e l’esperienza di Dimitrov. Oltre al singolare, il campione bulgaro parteciperà anche al torneo di doppio in coppia con l’italiano Flavio Cobolli, una combinazione interessante che potrebbe rivelarsi sorprendentemente competitiva. L’ATP di Acapulco è noto per la sua atmosfera elettrica, il pubblico caloroso e le condizioni impegnative, elementi che spesso danno vita a incontri spettacolari e ricchi di emozioni. Con determinazione e fiducia nei propri mezzi, Dimitrov affronta il torneo pronto a misurarsi con Atmane e a costruire una collaborazione efficace con Cobolli nel doppio.",
+    "pt": "Grigor Dimitrov inicia a sua campanha no prestigiado ATP 500 de Acapulco com um duelo de primeira ronda bastante interessante diante do francês Terence Atmane, um confronto que promete intensidade, ritmo acelerado e momentos de grande qualidade técnica. O búlgaro chega ao México em excelente forma e com o objetivo de manter a consistência demonstrada nas últimas semanas, procurando avançar profundamente no torneio. Atmane, conhecido pelo seu estilo agressivo no fundo do court e por um serviço poderoso, deverá exigir de Dimitrov toda a sua criatividade, mobilidade e inteligência tática. Além da competição em singulares, Dimitrov também disputará o torneio de pares ao lado do italiano Flavio Cobolli, formando uma dupla que desperta curiosidade e expectativa entre os adeptos. O torneio de Acapulco é famoso pelo ambiente vibrante, pelas condições exigentes e pelo entusiasmo do público, fatores que frequentemente resultam em partidas emocionantes e imprevisíveis. Com confiança e ambição, Dimitrov entra na competição preparado para enfrentar Atmane e para desenvolver uma parceria sólida com Cobolli na prova de duplas.",
+    "de": "Grigor Dimitrov startet seine Teilnahme am renommierten ATP‑500‑Turnier in Acapulco mit einem spannenden Erstrundenmatch gegen den Franzosen Terence Atmane, eine Begegnung, die intensives Tempo, kraftvolle Grundlinienduelle und hochklassiges Tennis verspricht. Der Bulgare reist in ausgezeichneter Form nach Mexiko und möchte seine starken Leistungen der vergangenen Wochen bestätigen. Atmane, bekannt für sein aggressives Spiel und einen druckvollen Aufschlag, wird Dimitrovs taktische Variabilität, seine Beinarbeit und seine Erfahrung auf die Probe stellen. Neben dem Einzel tritt Dimitrov auch im Doppel an, wo er gemeinsam mit dem Italiener Flavio Cobolli ein interessantes Duo bildet, das sich gegen ein stark besetztes Teilnehmerfeld behaupten möchte. Das Turnier in Acapulco ist berühmt für seine energiegeladene Atmosphäre, die leidenschaftlichen Fans und die anspruchsvollen Bedingungen, die häufig zu spektakulären und dramatischen Matches führen. Mit Selbstvertrauen und Entschlossenheit geht Dimitrov in das Turnier, bereit für das Duell mit Atmane und für eine vielversprechende Zusammenarbeit mit Cobolli im Doppel.",
+    "ru": "Григор Димитров начинает своё выступление на престижном турнире ATP 500 в Акапулько с интересного матча первого круга против французского теннисиста Теренса Атмане, что обещает динамичную и напряжённую борьбу с первых же розыгрышей. Болгарин прибывает в Мексику в отличной форме и стремится развить успешные результаты последних недель. Атмане, обладающий мощной подачей и агрессивной игрой с задней линии, способен создать серьёзные трудности, что потребует от Димитрова максимальной концентрации, тактической гибкости и высокого уровня исполнения. Помимо одиночного разряда, Димитров выступит и в парном турнире, где его партнёром станет итальянец Флавио Коболли. Их дуэт привлекает внимание благодаря сочетанию опыта, техники и амбициозного подхода к соревнованиям. Турнир в Акапулько славится своей яркой атмосферой, горячей поддержкой зрителей и непростыми условиями, которые нередко приводят к зрелищным и драматичным матчам. С уверенностью и решимостью Димитров вступает в борьбу, готовясь к поединку с Атмане и к построению успешного партнёрства с Коболли в парной сетке."
+  },
+  "img": "https://www.atptour.com/-/media/images/news/2025/10/27/19/59/dimitrov-paris-2025-monday.jpg"
+},
+{
+  "id": 9011,
+  "title": {
+    "bg": "Димитров за попълнението Налбандян: „Случи се толкова естествено“",
+    "en": "Dimitrov on the addition of Nalbandian: “It all happened so naturally”",
+    "es": "Dimitrov sobre la incorporación de Nalbandian: “Todo ocurrió de manera tan natural”",
+    "fr": "Dimitrov à propos de l’arrivée de Nalbandian : « Tout s’est passé tellement naturellement »",
+    "it": "Dimitrov sull’arrivo di Nalbandian: “È successo tutto in modo così naturale”",
+    "pt": "Dimitrov sobre a chegada de Nalbandian: “Tudo aconteceu de forma tão natural”",
+    "de": "Dimitrov über den Neuzugang Nalbandian: „Es geschah alles so natürlich“",
+    "ru": "Димитров о присоединении Налбандяна: «Всё произошло так естественно»"
+  },
+  "text": {
+    "bg": "Григор Димитров определи присъединяването на Давид Налбандян към треньорския си щаб като процес, който „се случи толкова естествено“, подчертавайки колко органично се е развила идеята за съвместна работа между двамата. Българският тенисист, който продължава да се утвърждава сред най-стабилните и последователни играчи на тура, прие новината с увереност и спокойствие, а атмосферата около промяната подсказва за силна синергия още от първите им разговори. Налбандян, бивш №3 в света и финалист на „Уимбълдън“, е фигура с огромен опит, тактическа дълбочина и изключително разбиране за играта, което го прави ценен ресурс за всеки елитен състезател. Димитров споделя, че още при първите им срещи е усетил естествена лекота в комуникацията, сходство в вижданията за тениса и общо усещане за посока, която може да изведе играта му на ново ниво. Според него Налбандян носи не само знания, но и специфична енергия, която вдъхновява и предразполага към развитие. Аржентинецът ще бъде с българина още от турнира в Акапулко, където двамата ще започнат да изграждат новата структура на подготовка, анализ и стратегическо планиране. Димитров подчертава, че присъствието на Налбандян не отменя ролята на останалите членове на щаба, а напротив – добавя нов пласт експертиза, който прави екипа още по-силен. За него това е естествена стъпка напред, резултат от дългогодишно търсене на точните хора, с които да сподели амбициите си за най-големите турнири. „Когато нещо е правилно, то просто се подрежда само“, казва Григор, описвайки усещането си за новото партньорство. Той вярва, че с Налбандян до себе си може да разгърне още повече потенциала си и да продължи да се бори за най-високите позиции в световния тенис.",
+    "en": "Grigor Dimitrov described the arrival of David Nalbandian to his coaching team as something that “happened so naturally”, emphasizing how seamlessly the idea of working together evolved between them. The Bulgarian star, who continues to establish himself as one of the most consistent and resilient players on the ATP Tour, welcomed the addition with calm confidence, noting that the atmosphere surrounding the decision felt harmonious from the very beginning. Nalbandian, a former world No. 3 and Wimbledon finalist, brings a wealth of experience, tactical intelligence and a deep understanding of the sport, making him an invaluable asset to any top-level competitor. Dimitrov explained that from their first conversations he sensed an effortless connection, a shared vision of the game and a mutual belief in a direction that could elevate his performance to new heights. He highlighted that Nalbandian contributes not only knowledge but also a unique energy that inspires growth and encourages a more refined approach to training and match preparation. The Argentine will join Dimitrov starting with the tournament in Acapulco, where the two will begin shaping their new structure of analysis, preparation and strategic planning. Dimitrov stressed that Nalbandian’s presence does not replace the importance of the existing team members but rather enriches the collective expertise, creating a stronger and more dynamic unit. For him, this step feels like a natural progression, the result of years spent searching for the right people to share his ambitions for the biggest stages in tennis. “When something is right, it simply falls into place,” Dimitrov said, expressing his confidence in the partnership. He believes that with Nalbandian by his side he can unlock even more of his potential and continue competing for the highest positions in the sport.",
+    "es": "Grigor Dimitrov definió la incorporación de David Nalbandian a su equipo técnico como algo que “ocurrió de manera tan natural”, destacando lo fluido que fue el proceso desde las primeras conversaciones entre ambos. El búlgaro, que sigue consolidándose como uno de los jugadores más constantes y completos del circuito, recibió la noticia con serenidad y convicción, señalando que la conexión con Nalbandian surgió de forma inmediata. El argentino, ex número 3 del mundo y finalista de Wimbledon, aporta una enorme experiencia, una visión táctica privilegiada y un entendimiento profundo del juego, cualidades que lo convierten en un refuerzo de enorme valor para cualquier tenista de élite. Dimitrov explicó que desde el primer momento sintió una sintonía natural, una coincidencia en la forma de interpretar el tenis y una claridad compartida sobre el camino que puede llevar su rendimiento a un nivel superior. Subrayó que Nalbandian no solo suma conocimientos, sino también una energía particular que impulsa la motivación, la disciplina y la evolución constante. Ambos comenzarán su trabajo conjunto en el torneo de Acapulco, donde establecerán una nueva estructura de preparación, análisis y planificación estratégica. Dimitrov remarcó que la llegada de Nalbandian no sustituye a los demás miembros del equipo, sino que añade una capa adicional de experiencia que fortalece aún más el proyecto deportivo. Para él, este paso representa una evolución natural, fruto de la búsqueda de colaboradores capaces de acompañar sus aspiraciones en los torneos más importantes del mundo. “Cuando algo es correcto, simplemente encaja”, afirmó Dimitrov, convencido de que esta alianza puede ayudarle a liberar aún más su potencial y a mantenerse entre los mejores del circuito.",
+    "fr": "Grigor Dimitrov a décrit l’arrivée de David Nalbandian dans son équipe d’entraîneurs comme quelque chose qui « s’est passé tellement naturellement », soulignant à quel point l’idée de collaborer s’est développée de manière fluide dès leurs premiers échanges. Le Bulgare, qui continue de s’imposer comme l’un des joueurs les plus constants et complets du circuit, a accueilli cette nouvelle avec calme et confiance, notant que l’atmosphère autour de cette décision avait été harmonieuse dès le début. Nalbandian, ancien numéro 3 mondial et finaliste à Wimbledon, apporte une immense expérience, une intelligence tactique remarquable et une compréhension profonde du jeu, faisant de lui un atout précieux pour tout joueur de haut niveau. Dimitrov a expliqué qu’il avait immédiatement ressenti une connexion naturelle, une vision commune du tennis et une direction partagée capable d’élever encore davantage son niveau de performance. Il a souligné que Nalbandian apporte non seulement des connaissances, mais aussi une énergie particulière qui inspire la progression, la concentration et une approche plus affinée de la préparation. L’Argentin rejoindra Dimitrov dès le tournoi d’Acapulco, où ils commenceront à construire une nouvelle structure d’analyse, de préparation et de planification stratégique. Dimitrov a précisé que l’arrivée de Nalbandian ne remplace pas le rôle des autres membres de l’équipe, mais ajoute une couche supplémentaire d’expertise qui renforce l’ensemble du groupe. Pour lui, il s’agit d’une évolution naturelle, le résultat d’années de recherche des bonnes personnes pour partager ses ambitions sur les plus grandes scènes du tennis mondial. « Quand quelque chose est juste, tout se met en place naturellement », a déclaré Dimitrov, convaincu que ce partenariat l’aidera à exploiter encore davantage son potentiel et à continuer de se battre pour les plus hautes positions du tennis mondial.",
+    "it": "Grigor Dimitrov ha descritto l’arrivo di David Nalbandian nel suo team tecnico come qualcosa che “è successo in modo così naturale”, sottolineando quanto spontaneamente si sia sviluppata l’idea di collaborare. Il tennista bulgaro, ormai stabilmente tra i giocatori più solidi e completi del circuito, ha accolto la novità con serenità e fiducia, evidenziando che la sintonia con Nalbandian è stata immediata fin dai primi colloqui. L’argentino, ex numero 3 del mondo e finalista a Wimbledon, porta con sé un bagaglio di esperienza straordinario, una profonda intelligenza tattica e una comprensione raffinata del gioco, qualità che lo rendono un valore aggiunto per qualsiasi atleta di alto livello. Dimitrov ha raccontato di aver percepito fin da subito una naturale affinità, una visione comune del tennis e una direzione condivisa che potrebbe innalzare ulteriormente il suo rendimento. Ha spiegato che Nalbandian non offre soltanto competenza tecnica, ma anche un’energia particolare che stimola la crescita, la concentrazione e la capacità di affrontare le sfide con maggiore lucidità. I due inizieranno a lavorare insieme già dal torneo di Acapulco, dove definiranno una nuova struttura di preparazione, analisi e pianificazione strategica. Dimitrov ha precisato che la presenza di Nalbandian non sostituisce il ruolo degli altri membri dello staff, ma aggiunge un livello superiore di esperienza che rende il gruppo ancora più completo. Per lui si tratta di un passo naturale, il risultato di anni trascorsi alla ricerca delle persone giuste con cui condividere le proprie ambizioni nei tornei più prestigiosi. “Quando qualcosa è giusto, si incastra da sé”, ha dichiarato Dimitrov, convinto che questa collaborazione possa aiutarlo a esprimere ancora meglio il suo potenziale e a competere stabilmente ai vertici del tennis mondiale.",
+    "pt": "Grigor Dimitrov descreveu a chegada de David Nalbandian à sua equipa técnica como algo que “aconteceu de forma tão natural”, destacando a fluidez com que a ideia de trabalharem juntos surgiu desde os primeiros contactos. O búlgaro, que continua a afirmar-se como um dos jogadores mais consistentes e completos do circuito, recebeu a novidade com tranquilidade e confiança, afirmando que a sintonia com Nalbandian foi imediata. O argentino, antigo número 3 do mundo e finalista de Wimbledon, traz consigo uma vasta experiência, uma visão tática apurada e um entendimento profundo do jogo, qualidades que o tornam um reforço de enorme valor para qualquer atleta de topo. Dimitrov explicou que desde o início sentiu uma ligação natural, uma visão comum sobre o ténis e uma direção clara que poderá elevar ainda mais o seu nível competitivo. Sublinhou que Nalbandian não acrescenta apenas conhecimento técnico, mas também uma energia especial que inspira evolução, disciplina e ambição renovada. A colaboração entre ambos terá início no torneio de Acapulco, onde irão definir uma nova estrutura de preparação, análise e planeamento estratégico. Dimitrov fez questão de frisar que a chegada de Nalbandian não substitui o papel dos restantes membros da equipa, mas acrescenta uma camada adicional de experiência que fortalece o projeto como um todo. Para ele, este passo representa uma evolução natural, fruto da procura contínua pelas pessoas certas para acompanhar as suas ambições nos maiores palcos do ténis mundial. “Quando algo é correto, simplesmente encaixa”, afirmou Dimitrov, convicto de que esta parceria poderá ajudá-lo a libertar ainda mais do seu potencial e a manter-se entre os melhores do circuito.",
+    "de": "Grigor Dimitrov bezeichnete die Verpflichtung von David Nalbandian für sein Trainerteam als etwas, das „ganz natürlich passiert ist“, und betonte, wie organisch sich die Idee einer Zusammenarbeit entwickelt habe. Der Bulgare, der sich weiterhin als einer der konstantesten und vielseitigsten Spieler der ATP-Tour behauptet, nahm die Veränderung mit Ruhe und Zuversicht auf und erklärte, dass die Harmonie zwischen ihnen bereits bei den ersten Gesprächen spürbar gewesen sei. Nalbandian, ehemaliger Weltranglistendritter und Wimbledon-Finalist, bringt enorme Erfahrung, taktische Tiefe und ein außergewöhnliches Verständnis für das Spiel mit, was ihn zu einer wertvollen Verstärkung für jeden Spitzenspieler macht. Dimitrov berichtete, dass er sofort eine natürliche Verbindung gespürt habe, eine gemeinsame Sichtweise auf den Tennissport und eine klare Vorstellung von einem Weg, der sein Spiel auf ein neues Niveau heben könne. Er hob hervor, dass Nalbandian nicht nur Fachwissen, sondern auch eine besondere Energie mitbringe, die Motivation, Fokus und Weiterentwicklung fördere. Die Zusammenarbeit beginnt beim Turnier in Acapulco, wo beide eine neue Struktur für Vorbereitung, Analyse und strategische Planung aufbauen werden. Dimitrov betonte, dass Nalbandians Ankunft die Bedeutung der bestehenden Teammitglieder nicht schmälere, sondern das gesamte Gefüge durch zusätzliche Expertise stärke. Für ihn ist dieser Schritt eine natürliche Weiterentwicklung, das Ergebnis einer langen Suche nach den richtigen Menschen, die seine Ambitionen auf den größten Bühnen des Tennissports teilen. „Wenn etwas richtig ist, fügt es sich von selbst“, sagte Dimitrov und zeigte sich überzeugt, dass diese Partnerschaft ihm helfen könne, sein Potenzial noch stärker auszuschöpfen und weiterhin an der Weltspitze mitzuspielen.",
+    "ru": "Григор Димитров назвал присоединение Давида Налбандяна к своему тренерскому штабу событием, которое «произошло так естественно», подчеркнув, насколько органично развилась идея о совместной работе. Болгарский теннисист, продолжающий укреплять позиции одного из самых стабильных и разносторонних игроков тура, воспринял новость с уверенностью и спокойствием, отметив, что взаимопонимание с Налбандяном возникло с первых же бесед. Налбандян, бывший №3 мира и финалист «Уимблдона», обладает огромным опытом, глубоким тактическим мышлением и тонким пониманием игры, что делает его ценнейшим усилением для любого спортсмена мирового уровня. Димитров рассказал, что сразу почувствовал естественную лёгкость в общении, совпадение взглядов на теннис и общее понимание направления, которое может вывести его игру на новый уровень. Он отметил, что Налбандян приносит не только знания, но и особую энергетику, которая вдохновляет, усиливает концентрацию и способствует постоянному росту. Совместная работа начнётся уже на турнире в Акапулько, где они выстроят новую систему подготовки, анализа и стратегического планирования. Димитров подчеркнул, что приход Налбандяна не умаляет роли других членов штаба, а наоборот — добавляет новый уровень экспертизы, делая команду ещё более сильной. Для него это естественный шаг вперёд, результат многолетних усилий по поиску людей, способных разделить его амбиции на крупнейших турнирах мира. «Когда что‑то правильно, оно само становится на свои места», — сказал Димитров, выразив уверенность, что это партнёрство поможет ему раскрыть потенциал ещё глубже и продолжить борьбу за вершины мирового тенниса."
+  },
+  "img": "https://www.atptour.com/-/media/images/news/2026/02/23/13/16/dimitrov-nalbandian-acapulco-2026-preview.jpg"
+}
+
+
+
+
+
+
+
+
+
+           
+        ];
+
+        const translations = {
+            "bg": {
+    "nav_news": "Новини",
+    "nav_ranking": "Ранглиста",
+    "nav_tournaments": "Турнири",
+    "nav_facts": "Факти",
+
+    "hero_title": "Григор Димитров",
+    "hero_sub": "Официален фен сайт",
+    "hero_btn": "Виж още",
+
+    "stat_rank": "Текущо място",
+    "stat_best": "Най-високо място",
+    "stat_titles": "ATP Титли",
+    "stat_year": "Сезон",
+
+    "th_date": "Дата",
+    "th_event": "Турнир",
+    "th_surface": "Настилка",
+    "surf_hard": "Твърда",
+    "surf_clay": "Клей",
+
+    
+    "fact_1": "Шампион на ATP Finals 2017 без нито една загуба в турнира.",
+    "fact_2": "Известен с един от най-елегантните бекхенди с една ръка в тура.",
+    "fact_3": "Горд посланик на България и активен филантроп по целия свят.",
+    "fact_4": "Първият българин, достигнал до №3 в световната ранглиста на ATP.",
+    "fact_5": "Основател на фондация, подкрепяща млади таланти и социални каузи в България.",
+    "fact_6": "Първият българин, достигнал до полуфиналите на турнир от Големия шлем.",
+    "fact_7": "Носител на наградата „Спортист на годината“ в България.",
+    "fact_8": "Смятан за един от най-бързите и атлетични играчи на корта.",
+
+    "read_more": "Прочети повече",
+    "partners": "ПАРТНЬОРИ"
+},
+
+           "en": {
+    "nav_news": "News",
+    "nav_ranking": "Ranking",
+    "nav_tournaments": "Tournaments",
+    "nav_facts": "Facts",
+
+    "hero_title": "Grigor Dimitrov",
+    "hero_sub": "Official Fan Site",
+    "hero_btn": "See more",
+
+    "stat_rank": "Current Rank",
+    "stat_best": "Career High",
+    "stat_titles": "ATP Titles",
+    "stat_year": "Season",
+
+    "th_date": "Date",
+    "th_event": "Tournament",
+    "th_surface": "Surface",
+    "surf_hard": "Hard",
+    "surf_clay": "Clay",
+
+    "fact_1": "Champion of the 2017 ATP Finals without losing a single match.",
+    "fact_2": "Known for having one of the most elegant one-handed backhands on tour.",
+    "fact_3": "A proud ambassador of Bulgaria and an active philanthropist worldwide.",
+    "fact_4": "The first Bulgarian to reach World No. 3 in the ATP rankings.",
+    "fact_5": "Founder of a foundation supporting young talents and social causes in Bulgaria.",
+    "fact_6": "The first Bulgarian to reach the semifinals of a Grand Slam tournament.",
+    "fact_7": "Winner of Bulgaria’s 'Athlete of the Year' award.",
+    "fact_8": "Considered one of the fastest and most athletic players on the court.",
+
+    "read_more": "Read more",
+    "partners": "PARTNERS"
+},
+
+     "es": {
+    "nav_news": "Noticias",
+    "nav_ranking": "Ranking",
+    "nav_tournaments": "Torneos",
+    "nav_facts": "Hechos",
+
+    "hero_title": "Grigor Dimitrov",
+    "hero_sub": "Sitio oficial de fans",
+    "hero_btn": "Ver más",
+
+    "stat_rank": "Ranking actual",
+    "stat_best": "Mejor ranking",
+    "stat_titles": "Títulos ATP",
+    "stat_year": "Temporada",
+
+    "th_date": "Fecha",
+    "th_event": "Torneo",
+    "th_surface": "Superficie",
+    "surf_hard": "Dura",
+    "surf_clay": "Arcilla",
+
+    "fact_1": "Campeón de las ATP Finals 2017 sin perder un solo partido.",
+    "fact_2": "Conocido por tener uno de los reveses a una mano más elegantes del circuito.",
+    "fact_3": "Orgulloso embajador de Bulgaria y filántropo activo en todo el mundo.",
+    "fact_4": "El primer búlgaro en alcanzar el número 3 del ranking ATP.",
+    "fact_5": "Fundador de una fundación que apoya a jóvenes talentos y causas sociales en Bulgaria.",
+    "fact_6": "El primer búlgaro en llegar a las semifinales de un torneo de Grand Slam.",
+    "fact_7": "Ganador del premio ‘Deportista del Año’ en Bulgaria.",
+    "fact_8": "Considerado uno de los jugadores más rápidos y atléticos en la pista.",
+
+    "read_more": "Leer más",
+    "partners": "PATROCINADORES"
+},
+
+"fr": {
+    "nav_news": "Actualités",
+    "nav_ranking": "Classement",
+    "nav_tournaments": "Tournois",
+    "nav_facts": "Faits",
+
+    "hero_title": "Grigor Dimitrov",
+    "hero_sub": "Site officiel des fans",
+    "hero_btn": "Voir plus",
+
+    "stat_rank": "Classement actuel",
+    "stat_best": "Meilleur classement",
+    "stat_titles": "Titres ATP",
+    "stat_year": "Saison",
+
+    "th_date": "Date",
+    "th_event": "Tournoi",
+    "th_surface": "Surface",
+    "surf_hard": "Dur",
+    "surf_clay": "Terre battue",
+
+    "fact_1": "Champion des ATP Finals 2017 sans perdre un seul match.",
+    "fact_2": "Connu pour l’un des revers à une main les plus élégants du circuit.",
+    "fact_3": "Ambassadeur fier de la Bulgarie et philanthrope actif dans le monde entier.",
+    "fact_4": "Premier Bulgare à atteindre la 3e place du classement ATP.",
+    "fact_5": "Fondateur d’une fondation soutenant les jeunes talents et des causes sociales en Bulgarie.",
+    "fact_6": "Premier Bulgare à atteindre les demi-finales d’un tournoi du Grand Chelem.",
+    "fact_7": "Lauréat du prix « Sportif de l’année » en Bulgarie.",
+    "fact_8": "Considéré comme l’un des joueurs les plus rapides et athlétiques du circuit.",
+
+    "read_more": "En savoir plus",
+    "partners": "PARTENAIRES"
+},
+
+"it": {
+    "nav_news": "Notizie",
+    "nav_ranking": "Classifica",
+    "nav_tournaments": "Tornei",
+    "nav_facts": "Curiosità",
+
+    "hero_title": "Grigor Dimitrov",
+    "hero_sub": "Sito ufficiale dei fan",
+    "hero_btn": "Scopri di più",
+
+    "stat_rank": "Classifica attuale",
+    "stat_best": "Miglior classifica",
+    "stat_titles": "Titoli ATP",
+    "stat_year": "Stagione",
+
+    "th_date": "Data",
+    "th_event": "Torneo",
+    "th_surface": "Superficie",
+    "surf_hard": "Cemento",
+    "surf_clay": "Terra rossa",
+
+    "fact_1": "Campione delle ATP Finals 2017 senza perdere una sola partita.",
+    "fact_2": "Conosciuto per uno dei rovesci a una mano più eleganti del circuito.",
+    "fact_3": "Orgoglioso ambasciatore della Bulgaria e filantropo attivo in tutto il mondo.",
+    "fact_4": "Primo bulgaro a raggiungere il numero 3 del ranking ATP.",
+    "fact_5": "Fondatore di una fondazione che sostiene giovani talenti e cause sociali in Bulgaria.",
+    "fact_6": "Primo bulgaro a raggiungere le semifinali di un torneo del Grande Slam.",
+    "fact_7": "Vincitore del premio 'Sportivo dell'anno' in Bulgaria.",
+    "fact_8": "Considerato uno dei giocatori più veloci e atletici del circuito.",
+
+    "read_more": "Leggi di più",
+    "partners": "PARTNER"
+},
+
+"pt": {
+    "nav_news": "Notícias",
+    "nav_ranking": "Ranking",
+    "nav_tournaments": "Torneios",
+    "nav_facts": "Factos",
+
+    "hero_title": "Grigor Dimitrov",
+    "hero_sub": "Site oficial de fãs",
+    "hero_btn": "Ver mais",
+
+    "stat_rank": "Posição atual",
+    "stat_best": "Melhor posição",
+    "stat_titles": "Títulos ATP",
+    "stat_year": "Época",
+
+    "th_date": "Data",
+    "th_event": "Torneio",
+    "th_surface": "Superfície",
+    "surf_hard": "Rápida",
+    "surf_clay": "Terra batida",
+
+    "fact_1": "Campeão das ATP Finals 2017 sem perder um único jogo.",
+    "fact_2": "Conhecido por ter um dos backhands a uma mão mais elegantes do circuito.",
+    "fact_3": "Orgulhoso embaixador da Bulgária e filantropo ativo em todo o mundo.",
+    "fact_4": "O primeiro búlgaro a alcançar o número 3 do ranking ATP.",
+    "fact_5": "Fundador de uma fundação que apoia jovens talentos e causas sociais na Bulgária.",
+    "fact_6": "O primeiro búlgaro a chegar às meias-finais de um torneio do Grand Slam.",
+    "fact_7": "Vencedor do prémio 'Desportista do Ano' na Bulgária.",
+    "fact_8": "Considerado um dos jogadores mais rápidos e atléticos do circuito.",
+
+    "read_more": "Ler mais",
+    "partners": "PARCEIROS"
+},
+
+"de": {
+    "nav_news": "Nachrichten",
+    "nav_ranking": "Rangliste",
+    "nav_tournaments": "Turniere",
+    "nav_facts": "Fakten",
+
+    "hero_title": "Grigor Dimitrov",
+    "hero_sub": "Offizielle Fanseite",
+    "hero_btn": "Mehr ansehen",
+
+    "stat_rank": "Aktuelle Platzierung",
+    "stat_best": "Beste Platzierung",
+    "stat_titles": "ATP-Titel",
+    "stat_year": "Saison",
+
+    "th_date": "Datum",
+    "th_event": "Turnier",
+    "th_surface": "Belag",
+    "surf_hard": "Hartplatz",
+    "surf_clay": "Sandplatz",
+
+    "fact_1": "Sieger der ATP Finals 2017 ohne eine einzige Niederlage.",
+    "fact_2": "Bekannt für einen der elegantesten einhändigen Rückhände auf der Tour.",
+    "fact_3": "Stolzer Botschafter Bulgariens und weltweit aktiver Philanthrop.",
+    "fact_4": "Der erste Bulgare, der Platz Nr. 3 der ATP-Weltrangliste erreichte.",
+    "fact_5": "Gründer einer Stiftung zur Unterstützung junger Talente und sozialer Projekte in Bulgarien.",
+    "fact_6": "Der erste Bulgare, der das Halbfinale eines Grand-Slam-Turniers erreichte.",
+    "fact_7": "Gewinner der Auszeichnung „Sportler des Jahres“ in Bulgarien.",
+    "fact_8": "Gilt als einer der schnellsten und athletischsten Spieler auf dem Platz.",
+
+    "read_more": "Mehr lesen",
+    "partners": "PARTNER"
+},
+
+"ru": {
+    "nav_news": "Новости",
+    "nav_ranking": "Рейтинг",
+    "nav_tournaments": "Турниры",
+    "nav_facts": "Факты",
+
+    "hero_title": "Григор Димитров",
+    "hero_sub": "Официальный фан-сайт",
+    "hero_btn": "Подробнее",
+
+    "stat_rank": "Текущая позиция",
+    "stat_best": "Лучшая позиция",
+    "stat_titles": "Титулы ATP",
+    "stat_year": "Сезон",
+
+    "th_date": "Дата",
+    "th_event": "Турнир",
+    "th_surface": "Покрытие",
+    "surf_hard": "Хард",
+    "surf_clay": "Грунт",
+
+    "fact_1": "Победитель ATP Finals 2017, не проиграв ни одного матча.",
+    "fact_2": "Известен одним из самых элегантных одноручных бэкхендов в туре.",
+    "fact_3": "Гордый посол Болгарии и активный филантроп по всему миру.",
+    "fact_4": "Первый болгарин, достигший 3-го места в рейтинге ATP.",
+    "fact_5": "Основатель фонда, поддерживающего молодых талантов и социальные инициативы в Болгарии.",
+    "fact_6": "Первый болгарин, вышедший в полуфинал турнира Большого шлема.",
+    "fact_7": "Обладатель награды «Спортсмен года» в Болгарии.",
+    "fact_8": "Считается одним из самых быстрых и атлетичных игроков на корте.",
+
+    "read_more": "Читать далее",
+    "partners": "ПАРТНЁРЫ"
+},
+
+
+
+
+
+
+
+
+        };
+
+        let currentLang = 'bg';
+
+        function setLanguage(lang) {
+            currentLang = lang;
+            document.querySelectorAll('.lang-btn').forEach(btn => {
+                btn.classList.remove('active');
+                if(btn.innerText.toLowerCase() === lang) btn.classList.add('active');
+            });
+            document.querySelectorAll('[data-key]').forEach(el => {
+                const key = el.getAttribute('data-key');
+                const trans = translations[lang] || translations['en'];
+                if(trans[key]) el.innerText = trans[key];
+            });
+            renderNews();
+        }
+
+        function renderNews() {
+    const container = document.getElementById('newsContainer');
+    if (!container) return;
+    container.innerHTML = '';
+
+    newsData.forEach(item => {
+        // Get the correct text based on the keys used
+        const title = item.title[currentLang] || item.title['en'] || '';
+        const bodyText = (item.fullText && (item.fullText[currentLang] || item.fullText['en'])) || 
+                         (item.text && (item.text[currentLang] || item.text['en'])) || '';
+
+        const card = document.createElement('div');
+        card.className = 'news-card';
+        card.innerHTML = `
+            <img src="${item.img}" class="news-img" alt="News">
+            <div class="news-body">
+                <h3>${title}</h3>
+                <p>${bodyText}</p>
+                <button class="read-more-btn" onclick="openModal(${item.id})">
+                    ${translations[currentLang]?.read_more || 'Read More'}
+                </button>
+            </div>
+        `;
+        container.appendChild(card);
+    });
+}
+function openModal(id) {
+    const item = newsData.find(n => n.id === id);
+    if (!item) return;
+
+    // Sets the title
+    document.getElementById('modalTitle').innerText = item.title[currentLang] || item.title['en'] || '';
+    
+    // FIX: Look for 'text' (which is the key you used in your data)
+    const textObj = item.fullText || item.text; 
+    document.getElementById('modalText').innerText = textObj ? (textObj[currentLang] || textObj['en']) : '';
+    
+    document.getElementById('modalImg').src = item.img;
+    document.getElementById('newsModal').style.display = 'flex';
+}
+
+        function closeModal() { document.getElementById('newsModal').style.display = 'none'; }
+        window.onclick = (e) => { if (e.target == document.getElementById('newsModal')) closeModal(); }
+        window.onload = () => { setLanguage('bg'); };
+    </script>
+</body>
+</html>
