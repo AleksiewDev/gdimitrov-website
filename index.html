@@ -103,19 +103,95 @@
         }
 
         /* --- Hero Section --- */
-        .hero {
-            height: 100vh;
-            background: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.4)), 
-                        url('https://images.tennis.com/image/private/t_q-best/v1710033634/tenniscom-prd/vz1ythi3bp1xgotx49ub.jpg');
-            background-size: cover;
-            background-position: center 20%;
-            background-attachment: fixed;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            color: white;
-        }
+       .hero {
+    height: 100vh;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+}
+
+/* Slideshow container */
+.slideshow {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+
+/* Each slide */
+.slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center 20%;
+    background-attachment: fixed;
+    opacity: 0;
+    animation: fade 15s infinite;
+}
+
+/* Delay each slide */
+.slide:nth-child(1) { animation-delay: 0s; }
+.slide:nth-child(2) { animation-delay: 3s; }
+.slide:nth-child(3) { animation-delay: 6s; }
+.slide:nth-child(4) { animation-delay: 9s; }
+.slide:nth-child(5) { animation-delay: 12s; }
+
+/* Fade animation */
+@keyframes fade {
+    0%   { opacity: 0; }
+    10%  { opacity: 1; }
+    30%  { opacity: 1; }
+    40%  { opacity: 0; }
+    100% { opacity: 0; }
+}
+
+
+
+
+/* Slideshow layer */
+.hero::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center 20%;
+    background-attachment: fixed;
+    animation: heroSlide 20s infinite;
+    z-index: -1;
+    opacity: 1;
+}
+
+/* Fade animation */
+@keyframes heroSlide {
+    0%   { background-image: var(--hero-images, 0); opacity: 1; }
+    20%  { opacity: 1; }
+    25%  { opacity: 0; }
+
+    26%  { background-image: var(--hero-images, 1); opacity: 0; }
+    45%  { opacity: 1; }
+    50%  { opacity: 0; }
+
+    51%  { background-image: var(--hero-images, 2); opacity: 0; }
+    70%  { opacity: 1; }
+    75%  { opacity: 0; }
+
+    76%  { background-image: var(--hero-images, 3); opacity: 0; }
+    95%  { opacity: 1; }
+    100% { opacity: 0; }
+}
+
 
         .hero-content {
             max-width: 900px;
@@ -351,12 +427,21 @@
     </header>
 
     <section class="hero">
-        <div class="hero-content">
-            <p data-key="hero_sub">Официален фен сайт</p>
-            <h1 data-key="hero_title">Григор Димитров</h1>
-            <a href="#news" class="read-more-btn" style="background: var(--accent); padding: 15px 35px;" data-key="hero_btn">Разгледай новините</a>
-        </div>
-    </section>
+    <div class="slideshow">
+        <div class="slide" style="background-image: url('https://images.tennis.com/image/private/t_q-best/v1710033634/tenniscom-prd/vz1ythi3bp1xgotx49ub.jpg');"></div>
+        <div class="slide" style="background-image: url('https://www.reuters.com/resizer/v2/3KJ5DXQTWJIULBO4Z2LQ2DGVZA.jpg?auth=f639fb326616fa6fc51a221fe5e7e6b49e14f9e4ea7fcafd7b6ffb7ef4d29742&width=1080&quality=80');"></div>
+        <div class="slide" style="background-image: url('https://s42493.pcdn.co/wp-content/uploads/2025/03/20250321_MO_PS2_7343_E.jpg');"></div>
+        <div class="slide" style="background-image: url('https://images.squarespace-cdn.com/content/v1/5a97763275f9eeee0b6f77f0/bc5ffb68-4d1d-4d74-a5b7-a9af69059fc6/image1.png');"></div>
+        <div class="slide" style="background-image: url('https://bnr.bg/api/media/9bc9c186-b7e0-4ac3-a3af-daf20d1c03ae?Size=large');"></div>
+    </div>
+
+    <div class="hero-content">
+        <p data-key="hero_sub">Официален фен сайт</p>
+        <h1 data-key="hero_title">Григор Димитров</h1>
+        <a href="#news" class="read-more-btn" style="background: var(--accent); padding: 15px 35px;" data-key="hero_btn">Разгледай новините</a>
+    </div>
+</section>
+
 
     <section id="ranking">
         <div class="section-title">
@@ -1199,3 +1284,4 @@ function openModal(id) {
     </script>
 </body>
 </html>
+
