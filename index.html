@@ -400,6 +400,119 @@
             from { opacity: 0; transform: translateY(50px); }
             to { opacity: 1; transform: translateY(0); }
         }
+        /* --- Нови Секции: Профил, Анализи, Галерия --- */
+.grid-3 {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 25px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.profile-card, .analysis-card, .gallery-item {
+    background: var(--white);
+    border-radius: 18px;
+    padding: 30px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.04);
+    transition: var(--transition);
+    border-top: 4px solid var(--primary);
+}
+
+.profile-card:hover, .analysis-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 16px 35px rgba(0,0,0,0.08);
+    border-top-color: var(--accent);
+}
+
+.profile-card h3, .analysis-card h3 {
+    color: var(--primary);
+    margin-bottom: 15px;
+    font-size: 1.25rem;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.profile-card h3 i, .analysis-card h3 i {
+    color: var(--accent);
+}
+
+.profile-list {
+    list-style: none;
+    padding: 0;
+}
+
+.profile-list li {
+    padding: 8px 0;
+    border-bottom: 1px solid #f1f1f1;
+    font-size: 0.95rem;
+}
+
+.profile-list li:last-child {
+    border-bottom: none;
+}
+
+.profile-list strong {
+    color: var(--primary);
+}
+
+/* Анализи Баджове */
+.tag {
+    display: inline-block;
+    padding: 4px 10px;
+    background: #eef2f7;
+    color: var(--primary);
+    border-radius: 20px;
+    font-size: 0.75rem;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+.sw-box {
+    margin-top: 15px;
+    padding: 12px;
+    border-radius: 10px;
+    font-size: 0.9rem;
+}
+.sw-pros { background: #eef9f2; border-left: 4px solid #2ecc71; }
+.sw-cons { background: #fdf2f2; border-left: 4px solid #e74c3c; margin-top: 10px; }
+
+/* Галерия Grid & Мултимедия */
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.gallery-card {
+    background: var(--white);
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.05);
+    transition: var(--transition);
+}
+
+.gallery-card:hover {
+    transform: scale(1.02);
+}
+
+.gallery-card img, .gallery-card iframe {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border: none;
+    display: block;
+}
+
+.gallery-card .caption {
+    padding: 15px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--primary);
+    text-align: center;
+}
     </style>
 </head>
 <body>
@@ -410,8 +523,11 @@
             <ul class="nav-links">
                 <li><a href="#news" data-key="nav_news">Новини</a></li>
                 <li><a href="#ranking" data-key="nav_ranking">Ранглиста</a></li>
+                <li><a href="#profile">Профил</a></li>
+        <li><a href="#analysis">Анализи</a></li>
                 <li><a href="#tournaments" data-key="nav_tournaments">Турнири</a></li>
                 <li><a href="#facts" data-key="nav_facts">Факти</a></li>
+                  <li><a href="#gallery">Галерия</a></li>
             </ul>
         </nav>
         <div class="lang-switcher">
@@ -501,6 +617,107 @@
                     <tr>
                 </tbody>
             </table>
+        </div>
+    </section>
+    <!-- ================= 1) ПЪЛЕН ПРОФИЛ ================= -->
+    <section id="profile">
+        <div class="section-title">
+            <h2>Пълен Профил</h2>
+        </div>
+        <div class="grid-3">
+            <div class="profile-card">
+                <h3><i class="fas fa-user"></i> Биография & Стил</h3>
+                <ul class="profile-list">
+                    <li><strong>Роден:</strong> 16 май 1991 г., Хасково</li>
+                    <li><strong>Играе с:</strong> Дясна ръка (бекхенд с една ръка)</li>
+                    <li><strong>Стил:</strong> Офанзивен all-court с чести смени на темпото</li>
+                    <li><strong>Любим удар:</strong> Слайс бекхенд и форхенд по правата</li>
+                </ul>
+            </div>
+
+            <div class="profile-card">
+                <h3><i class="fas fa-cogs"></i> Треньори & Екипировка</h3>
+                <ul class="profile-list">
+                    <li><strong>Треньори:</strong> Давид Налбандиан, Джейми Делгадо</li>
+                    <li><strong>Ракета:</strong> Wilson Pro Staff 97 v14</li>
+                    <li><strong>Облекло:</strong> Lacoste</li>
+                    <li><strong>Обувки:</strong> Nike Vapor Pro</li>
+                </ul>
+            </div>
+
+            <div class="profile-card">
+                <h3><i class="fas fa-heart"></i> Турнири & Каузи</h3>
+                <ul class="profile-list">
+                    <li><strong>Любими турнири:</strong> Уимбълдън, Синсинати, Бризбейн</li>
+                    <li><strong>Благотворителност:</strong> Фондация „Григор Димитров“</li>
+                    <li><strong>Фокус:</strong> Подпомагане на таланти и детски центрове в България</li>
+                    <li><strong>Признание:</strong> Почетен гражданин на Хасково</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- ================= 2) АНАЛИЗИ НА ИГРАТА ================= -->
+    <section id="analysis" style="background: #f0f4f8;">
+        <div class="section-title">
+            <h2>Тактически Анализи</h2>
+        </div>
+        <div class="grid-3">
+            <div class="analysis-card">
+                <span class="tag">Тактика</span>
+                <h3><i class="fas fa-chess-knight"></i> Тактически Разбор</h3>
+                <p style="font-size:0.9rem; color:#555;">
+                    Григор гради разиграванията чрез изключителна вариативност. Използва дълбок слайс за неутрализиране на мощни съперници и скъсява точките с прецизен форхенд вътре в корта.
+                </p>
+                <div class="sw-box sw-pros"><strong>Силни страни:</strong> Първи сервис, усет на мрежата, атлетизъм.</div>
+                <div class="sw-box sw-cons"><strong>Ключ към победа:</strong> Защита на втори сервис и нисък брой непредизвикани грешки.</div>
+            </div>
+
+            <div class="analysis-card">
+                <span class="tag">Еволюция</span>
+                <h3><i class="fas fa-history"></i> Еволюция в Играта</h3>
+                <p style="font-size:0.9rem; color:#555;">
+                    От ранните сравнения с Федерер до зрял и прагматичен тенис. През годините Димитров оптимизира физическото натоварване, залагайки на по-ранно посрещане на топката и агресивна игра при сервис-геймовете.
+                </p>
+            </div>
+
+            <div class="analysis-card">
+                <span class="tag">Мач Разбор</span>
+                <h3><i class="fas fa-video"></i> Разбор на Големите Победи</h3>
+                <ul class="profile-list">
+                    <li><strong>срещу Алкарас (Маями '24):</strong> Перфектна игра на мрежата и доминиращ първи сервис.</li>
+                    <li><strong>срещу Федерер (US Open '19):</strong> Физическа издръжливост в 5 сета.</li>
+                    <li><strong>ATP Finals '17:</strong> Безпогрешен ритъм от основната линия (5-0).</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- ================= 3) ГАЛЕРИЯ (СНИМКИ И ВИДЕА) ================= -->
+    <section id="gallery">
+        <div class="section-title">
+            <h2>Галерия</h2>
+        </div>
+        <div class="gallery-grid">
+            <!-- Снимки от турнири -->
+            <div class="gallery-card">
+                <img src="https://i.pinimg.com/736x/7e/ed/03/7eed03d31eb0e14a3c073bbaf6348928.jpg" alt="Grigor Dimitrov Action" loading="lazy" decoding="async">
+                <div class="caption">Шампион в Акапулко 2014</div>
+            </div>
+
+            <div class="gallery-card">
+                <img src="https://i.pinimg.com/736x/a0/07/b0/a007b0ed437008ea729dad666ffffb8b.jpg" loading="lazy" decoding="async">
+                <div class="caption">Шампион в Синсинати 2017</div>
+            </div>
+
+            <!-- Исторически моменти -->
+            <div class="gallery-card">
+                <img src="https://i.pinimg.com/736x/3b/2d/3e/3b2d3eb74ced085a3bbf90eaf2e728af.jpg" alt="ATP Finals Trophy" loading="lazy" decoding="async">
+                <div class="caption">Шампион на ATP Finals 2017</div>
+            </div>
+
+            <!-- Видео Хайлайти / Интервюта (Lazy Loaded Iframe) -->
+            
         </div>
     </section>
 
